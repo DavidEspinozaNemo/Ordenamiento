@@ -29,6 +29,7 @@ class listaDobleCircular
         void insertar(T elemento);
         void insertarPos(T,int);
         T quitar();
+        void cambio(int,int);
 
         T primeroLista();
         bool ListaVacia() { return primero == NULL; }

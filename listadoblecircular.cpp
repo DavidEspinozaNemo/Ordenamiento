@@ -3,6 +3,32 @@
 using namespace std;
 
 template <class T>
+void listaDobleCircular<T>::cambio(int inicio,int final){
+    T dato1;
+    NodoListaDobleCircular* nodo_inicio;
+    NodoListaDobleCircular* aux = primero;
+    NodoListaDobleCircular* nodo_final;
+    int contador = 1; //1 para la primera pos
+    do{
+        if(contador == inicio){
+            nodo_inicio = aux; //coloca inicio
+        }else if(contador == final){
+            nodo_final = aux;  //coloca final
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=primero);
+    if(nodo_final!=NULL && nodo_inicio!=NULL){
+        dato1 = nodo_final->elemento;
+        nodo_final->elemento=nodo_inicio->elemento;
+        nodo_inicio->elemento=dato1;
+    }else{
+        cout<<"error en los indices";
+    }
+
+}
+
+template <class T>
 void listaDobleCircular<T>::insertarPos(T elemento,int pos){
     NodoListaDobleCircular* nuevo= new NodoListaDobleCircular(elemento);
     if (ListaVacia())
@@ -51,7 +77,6 @@ void listaDobleCircular<T>::insertar(T elemento)
                 nuevo->atras = aux;
                 nuevo->siguiente=primero;
                 primero->atras=nuevo;
-
             }
             aux=aux->siguiente;
         }while(aux!=primero);
@@ -65,7 +90,7 @@ void listaDobleCircular<T>::mostrarLista(){
     NodoListaDobleCircular* n;
     n = primero;
     do{
-        cout<<n<<endl;
+        cout<<n->elemento<<endl;
         n=n->siguiente;
     }while(n!=primero);
 }

@@ -30,6 +30,7 @@ class listaDoble
         void insertarPos(T,int);
         bool ListaVacia() { return primero == NULL; }
         void mostrarLista();
+        void cambio(int,int);
 };
 
 #endif // LISTADOBLE_H

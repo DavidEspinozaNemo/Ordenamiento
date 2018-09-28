@@ -3,6 +3,32 @@
 using namespace std;
 
 template <class T>
+void listaDoble<T>::cambio(int inicio,int final){
+    T dato1;
+    NodoListaDoble* nodo_inicio;
+    NodoListaDoble* aux = primero;
+    NodoListaDoble* nodo_final;
+    int contador = 1; //1 para la primera pos
+    do{
+        if(contador == inicio){
+            nodo_inicio = aux; //coloca inicio
+        }else if(contador == final){
+            nodo_final = aux;  //coloca final
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=NULL);
+    if(nodo_final!=NULL && nodo_inicio!=NULL){
+        dato1 = nodo_final->elemento;
+        nodo_final->elemento=nodo_inicio->elemento;
+        nodo_inicio->elemento=dato1;
+    }else{
+        cout<<"error en los indices";
+    }
+
+}
+
+template <class T>
 void listaDoble<T>::insertarPos(T elemento,int pos)
 {
     NodoListaDoble* nuevo= new NodoListaDoble(elemento);
@@ -58,7 +84,7 @@ void listaDoble<T>::mostrarLista(){
     NodoListaDoble* n;
     n = primero;
     do{
-        cout<<n<<endl;
+        cout<<n->elemento<<endl;
         n=n->siguiente;
     }while(n!=NULL);
 }

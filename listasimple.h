@@ -25,7 +25,7 @@ class listaSimple
         }
         void insertar(T elemento);
         void insertarPos(T elemento,int);
-
+        void cambio(int,int);
 
         bool ListaVacia() { return primero == NULL; }
 
