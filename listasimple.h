@@ -1,6 +1,10 @@
 #ifndef LISTASIMPLE_H
 #define LISTASIMPLE_H
 #include <iostream>
+#include <stdio.h>
+#include <cstdlib>
+
+using namespace std;
 
 template <class T>
 class listaSimple
@@ -10,11 +14,14 @@ class listaSimple
     public:
         NodoListaSimple* siguiente;
         T elemento;
-
-        NodoListaSimple(T x)
+        int es_string=0;
+        int es_objeto=0;
+        NodoListaSimple(T x,int str,int obj)
         {
         elemento = x;
         siguiente = NULL;
+        es_string= str;
+        es_objeto=obj;
         }
     };
     NodoListaSimple* primero;
@@ -23,11 +30,13 @@ class listaSimple
         {
             primero = NULL;
         }
-        void insertar(T elemento);
+        void insertar(T elemento,int,int);
         void insertarPos(T elemento,int);
         void cambio(int,int);
-
+        bool menor(int,int);
+        bool mayor(int,int);
         bool ListaVacia() { return primero == NULL; }
+
 
         void mostrarLista();
 };

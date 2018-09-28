@@ -17,7 +17,7 @@ void tri_insertion(int* t) //YOSUA BLANCO DIAZ
     }
 }
 template <class T>
-void tri_bulle(T* tableau)  //YOSUA BLANCO DIAZ
+void tri_bulle(T tableau)  //YOSUA BLANCO DIAZ
 {
     std::cout<<"Tri Bulle: ";
     int passage = 0;
@@ -29,13 +29,14 @@ void tri_bulle(T* tableau)  //YOSUA BLANCO DIAZ
         passage++;
         for(en_cours=0; en_cours<20-passage; en_cours++)
         {
-            if(tableau[en_cours]>tableau[en_cours+1])
+            if(tableau->mayor(en_cours,en_cours+1)) // tableau.mayor(en_cours,en_cours+1,tipo de dato)
             {
                 permutation = true;
                 //on echange les deux elements
-                int temp = tableau[en_cours];
-                tableau[en_cours] = tableau[en_cours+1];
-                tableau[en_cours+1] = temp;
+                //int temp = tableau[en_cours];
+                //tableau[en_cours] = tableau[en_cours+1];
+                //tableau[en_cours+1] = temp;
+                tableau->cambio(en_cours,en_cours+1);
             }
         }
     }

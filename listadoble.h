@@ -12,12 +12,15 @@ class listaDoble
         NodoListaDoble* siguiente;
         NodoListaDoble* atras;
         T elemento;
-
-        NodoListaDoble(T x)
+        int es_string=0;
+        int es_objeto=0;
+        NodoListaDoble(T x,int str,int obj)
         {
         elemento = x;
         siguiente = NULL;
         atras = NULL;
+        es_string= str;
+        es_objeto=obj;
         }
     };
     NodoListaDoble* primero;
@@ -26,11 +29,13 @@ class listaDoble
         {
             primero = NULL;
         }
-        void insertar(T elemento);
+        void insertar(T elemento,int,int);
         void insertarPos(T,int);
         bool ListaVacia() { return primero == NULL; }
         void mostrarLista();
         void cambio(int,int);
+        bool menor(int,int);
+        bool mayor(int,int);
 };
 
 #endif // LISTADOBLE_H
