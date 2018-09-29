@@ -11,10 +11,12 @@ class PilaGenerica
  	public:
  		NodoPila* siguiente;
  		T elemento;
- 
- 		NodoPila(T x)
+        int es_string;
+        int es_objeto;
+        NodoPila(T x,int str,int obj)
  		{
- 		
+        es_string=str;
+        es_objeto=obj;
  		elemento = x;
  		siguiente = NULL;
  		}
@@ -27,7 +29,7 @@ class PilaGenerica
  			cima = NULL;
  		}
  		
- 		void insertar(T elemento);
+        void insertar(T elemento,int,int);
  		T quitar();
  		
         T cimaPila();

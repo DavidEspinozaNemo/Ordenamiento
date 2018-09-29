@@ -11,12 +11,15 @@ class listaDobleCircular
         NodoListaDobleCircular* siguiente;
         NodoListaDobleCircular* atras;
         T elemento;
-
-        NodoListaDobleCircular(T x)
+        int es_string=0;
+        int es_objeto=0;
+        NodoListaDobleCircular(T x,int str,int obj)
         {
         elemento = x;
         siguiente = NULL;
         atras = NULL;
+        es_string= str;
+        es_objeto=obj;
         }
     };
     NodoListaDobleCircular* primero;
@@ -26,10 +29,12 @@ class listaDobleCircular
             primero = NULL;
 
         }
-        void insertar(T elemento);
+        void insertar(T elemento,int,int);
         void insertarPos(T,int);
         T quitar();
-
+        void cambio(int,int);
+        bool menor(int,int);
+        bool mayor(int,int);
         T primeroLista();
         bool ListaVacia() { return primero == NULL; }
         void limpiarLista();
