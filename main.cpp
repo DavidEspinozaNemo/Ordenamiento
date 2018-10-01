@@ -146,21 +146,29 @@ int main(int argc, char *argv[])
                 case 2: //chars
                 {
                     listaSimple<char>* listaPrueba2 = new listaSimple<char>();
+                    listaDoble<char> *aux = new listaDoble<char>();
+                    aux = generarChars(guardaCantidad);
                     for(int x=0;x<guardaCantidad;x++){
-                        listaPrueba2->insertar('a',0,0);
+                        listaPrueba2->insertar(aux->getDato(x),0,0);
                     }
-                    listaPrueba2->mostrarLista();
+                    delete(aux);
 
+                    listaPrueba2->mostrarLista();
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
                 case 3: //string
                 {
                     listaSimple<string>* listaPrueba2 = new listaSimple<string>();
+                    listaDoble<string> *aux = new listaDoble<string>();
+                    aux = generarPalabras(guardaCantidad);
                     for(int x=0;x<guardaCantidad;x++){
-                        listaPrueba2->insertar("hola",1,0);
+                        listaPrueba2->insertar(aux->getDato(x),1,0);
                     }
-                    listaPrueba2->mostrarLista();
+                    delete(aux);
 
+                    listaPrueba2->mostrarLista();
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
                 case 4: //Objeto
@@ -180,37 +188,49 @@ int main(int argc, char *argv[])
             case 2: //Caso pala la lista Doble
             {
                 switch (guardaOb) {
-                case 1:
+                case 1: //numeros
                 {
                     listaDoble<int>* listaPrueba2 = new listaDoble<int>();
+                    listaDoble<int> *aux = new listaDoble<int>();
+                    aux = generarNumeros(guardaCantidad);
                     for(int x=0;x<guardaCantidad;x++){
-                        listaPrueba2->insertar(3,0,0);
+                        listaPrueba2->insertar(aux->getDato(x),0,0);
                     }
-                    listaPrueba2->mostrarLista();
+                    delete(aux);
 
+                    listaPrueba2->mostrarLista();
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
-                case 2:
+                case 2: //chars
                 {
                     listaDoble<char>* listaPrueba2 = new listaDoble<char>();
+                    listaDoble<char> *aux = new listaDoble<char>();
+                    aux = generarChars(guardaCantidad);
                     for(int x=0;x<guardaCantidad;x++){
-                        listaPrueba2->insertar('a',0,0);
+                        listaPrueba2->insertar(aux->getDato(x),0,0);
                     }
-                    listaPrueba2->mostrarLista();
+                    delete(aux);
 
+                    listaPrueba2->mostrarLista();
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
-                case 3:
+                case 3: //strings
                 {
                     listaDoble<string>* listaPrueba2 = new listaDoble<string>();
+                    listaDoble<string> *aux = new listaDoble<string>();
+                    aux = generarPalabras(guardaCantidad);
                     for(int x=0;x<guardaCantidad;x++){
-                        listaPrueba2->insertar("hola",1,0);
+                        listaPrueba2->insertar(aux->getDato(x),1,0);
                     }
-                    listaPrueba2->mostrarLista();
+                    delete(aux);
 
+                    listaPrueba2->mostrarLista();
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
-                case 4:
+                case 4: //objetos
                 {
                     listaDoble<persona*>* listaPrueba2 = new listaDoble<persona*>();
                     persona* persona1 = new persona("yosua",21,116830903);
@@ -227,39 +247,49 @@ int main(int argc, char *argv[])
             case 3: //Caso para la lista Doble circular
             {
                 switch (guardaOb) {
-                case 1:
+                case 1: //numeros
                 {
                     listaDobleCircular<int>* listaPrueba2 = new listaDobleCircular<int>();
+                    listaDoble<int> *aux = new listaDoble<int>();
+                    aux = generarNumeros(guardaCantidad);
                     for(int x=0;x<guardaCantidad;x++){
-                        listaPrueba2->insertar(3,0,0);
+                        listaPrueba2->insertar(aux->getDato(x),0,0);
                     }
+                    delete(aux);
+
                     listaPrueba2->mostrarLista();
-
-
-
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
-                case 2:
+                case 2: //chars
                 {
                     listaDobleCircular<char>* listaPrueba2 = new listaDobleCircular<char>();
+                    listaDoble<char> *aux = new listaDoble<char>();
+                    aux = generarChars(guardaCantidad);
                     for(int x=0;x<guardaCantidad;x++){
-                        listaPrueba2->insertar('a',0,0);
+                        listaPrueba2->insertar(aux->getDato(x),0,0);
                     }
-                    listaPrueba2->mostrarLista();
+                    delete(aux);
 
+                    listaPrueba2->mostrarLista();
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
-                case 3:
+                case 3: //strings
                 {
                     listaDobleCircular<string>* listaPrueba2 = new listaDobleCircular<string>();
+                    listaDoble<string> *aux = new listaDoble<string>();
+                    aux = generarPalabras(guardaCantidad);
                     for(int x=0;x<guardaCantidad;x++){
-                        listaPrueba2->insertar("hola",1,0);
+                        listaPrueba2->insertar(aux->getDato(x),1,0);
                     }
-                    listaPrueba2->mostrarLista();
+                    delete(aux);
 
+                    listaPrueba2->mostrarLista();
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
-                case 4:
+                case 4: //objetos
                 {
                     listaDobleCircular<persona*>* listaPrueba2 = new listaDobleCircular<persona*>();
                     persona* persona1 = new persona("yosua",21,116830903);
@@ -277,34 +307,49 @@ int main(int argc, char *argv[])
             {
                 switch (guardaOb)
                 {
-                case 1:
+                case 1: //Numeros
                 {
                     cola<int>* colaPrueba2 = new cola<int>();
+                    listaDoble<int> *aux = new listaDoble<int>();
+                    aux = generarNumeros(guardaCantidad);
                     for(int x=0;x<guardaCantidad;x++){
-                        colaPrueba2->insertar(3,0,0);
+                        colaPrueba2->insertar(aux->getDato(x),0,0);
                     }
+                    delete(aux);
+
                     colaPrueba2->mostrarCola(*colaPrueba2);
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
-                case 2:
+                case 2: //chars
                 {
                     cola<char>* colaPrueba2 = new cola<char>();
+                    listaDoble<char> *aux = new listaDoble<char>();
+                    aux = generarChars(guardaCantidad);
                     for(int x=0;x<guardaCantidad;x++){
-                        colaPrueba2->insertar('a',0,0);
+                        colaPrueba2->insertar(aux->getDato(x),0,0);
                     }
+                    delete(aux);
+
                     colaPrueba2->mostrarCola(*colaPrueba2);
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
-                case 3:
+                case 3: //String
                 {
                     cola<string>* colaPrueba2 = new cola<string>();
+                    listaDoble<string> *aux = new listaDoble<string>();
+                    aux = generarPalabras(guardaCantidad);
                     for(int x=0;x<guardaCantidad;x++){
-                        colaPrueba2->insertar("hola",1,0);
+                        colaPrueba2->insertar(aux->getDato(x),1,0);
                     }
+                    delete(aux);
+
                     colaPrueba2->mostrarCola(*colaPrueba2);
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
-                case 4:
+                case 4: //objetos
                 {
                     cola<persona*>* colaPrueba2 = new cola<persona*>();
                     persona* persona1 = new persona("yosua",21,116830903);
@@ -313,6 +358,7 @@ int main(int argc, char *argv[])
                     }
                     colaPrueba2->mostrarCola(*colaPrueba2);
 
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
                 }
@@ -321,34 +367,49 @@ int main(int argc, char *argv[])
             case 5: //Caso para la pila
             {
                 switch (guardaOb) {
-                case 1:
+                case 1: //numeros
                 {
                     PilaGenerica<int>* pilaPrueba2 = new PilaGenerica<int>();
+                    listaDoble<int> *aux = new listaDoble<int>();
+                    aux = generarNumeros(guardaCantidad);
                     for(int x=0;x<guardaCantidad;x++){
-                        pilaPrueba2->insertar(3,0,0);
+                        pilaPrueba2->insertar(aux->getDato(x),0,0);
                     }
+                    delete(aux);
+
                     pilaPrueba2->mostrarPila();
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
-                case 2:
+                case 2: //chars
                 {
                     PilaGenerica<char>* pilaPrueba2 = new PilaGenerica<char>();
+                    listaDoble<char> *aux = new listaDoble<char>();
+                    aux = generarChars(guardaCantidad);
                     for(int x=0;x<guardaCantidad;x++){
-                        pilaPrueba2->insertar('a',0,0);
+                        pilaPrueba2->insertar(aux->getDato(x),0,0);
                     }
+                    delete(aux);
+
                     pilaPrueba2->mostrarPila();
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
-                case 3:
+                case 3: //String
                 {
                     PilaGenerica<string>* pilaPrueba2 = new PilaGenerica<string>();
+                    listaDoble<string> *aux = new listaDoble<string>();
+                    aux = generarPalabras(guardaCantidad);
                     for(int x=0;x<guardaCantidad;x++){
-                        pilaPrueba2->insertar("hola",1,0);
+                        pilaPrueba2->insertar(aux->getDato(x),1,0);
                     }
+                    delete(aux);
+
                     pilaPrueba2->mostrarPila();
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
-                case 4:
+                case 4: //objetos
                 {
                     PilaGenerica<persona*>* pilaPrueba2 = new PilaGenerica<persona*>();
                     persona* persona1 = new persona("yosua",21,116830903);
@@ -357,6 +418,7 @@ int main(int argc, char *argv[])
                     }
                     pilaPrueba2->mostrarPila();
 
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
                 }
