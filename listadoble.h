@@ -14,6 +14,14 @@ class listaDoble
         T elemento;
         int es_string=0;
         int es_objeto=0;
+        NodoListaDoble(T x)
+        {
+            elemento = x;
+            siguiente = NULL;
+            atras = NULL;
+            es_string= 0;
+            es_objeto=0;
+        }
         NodoListaDoble(T x,int str,int obj)
         {
         elemento = x;

@@ -92,7 +92,7 @@ void listaDoble<T>::insertarPos(T elemento,int pos)
 {
     NodoListaDoble* nuevo= new NodoListaDoble(elemento);
     if (ListaVacia())
-         primero = new NodoListaDoble(elemento);
+         primero = nuevo;
        else{
             if(pos <=1){
                 nuevo->siguiente = primero;

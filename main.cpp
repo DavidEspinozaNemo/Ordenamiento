@@ -6,6 +6,7 @@
 #include "listadoblecircular.cpp"
 #include "listasimple.cpp"
 #include "claseextra.cpp"
+#include "valoresaleatorios.h"
 #include <stdio.h>
 #include <cstdlib>
 #include <iostream>
@@ -13,7 +14,6 @@
 #include <typeinfo>
 #include <string>
 #include <fstream>
-#include "commonobject.h"
 
 using namespace std;
 
@@ -126,21 +126,24 @@ int main(int argc, char *argv[])
 
 
             switch (guardaEs) {
-            case 1:
+            case 1: //Caso para la listaSimple
             {
                 switch (guardaOb) {
-                case 1:
+                case 1: //numeros
                 {
                     listaSimple<int>* listaPrueba2 = new listaSimple<int>();
+                    listaDoble<int> *aux = new listaDoble<int>();
+                    aux = generarNumeros(guardaCantidad);
                     for(int x=0;x<guardaCantidad;x++){
-                        listaPrueba2->insertar(3,0,0);
+                        listaPrueba2->insertar(aux->getDato(x),0,0);
                     }
+                    delete(aux);
 
                     listaPrueba2->mostrarLista();
-
+                    //Swich(opcionOb) ->Para los algoritmos
                     break;
                 }
-                case 2:
+                case 2: //chars
                 {
                     listaSimple<char>* listaPrueba2 = new listaSimple<char>();
                     for(int x=0;x<guardaCantidad;x++){
@@ -150,7 +153,7 @@ int main(int argc, char *argv[])
 
                     break;
                 }
-                case 3:
+                case 3: //string
                 {
                     listaSimple<string>* listaPrueba2 = new listaSimple<string>();
                     for(int x=0;x<guardaCantidad;x++){
@@ -160,7 +163,7 @@ int main(int argc, char *argv[])
 
                     break;
                 }
-                case 4:
+                case 4: //Objeto
                 {
                     listaSimple<persona*>* listaPrueba2 = new listaSimple<persona*>();
                     persona* persona1 = new persona("yosua",21,116830903);
@@ -174,7 +177,7 @@ int main(int argc, char *argv[])
                 }
             break;
             }
-            case 2:
+            case 2: //Caso pala la lista Doble
             {
                 switch (guardaOb) {
                 case 1:
@@ -221,8 +224,8 @@ int main(int argc, char *argv[])
                 }
             break;
             }
-            case 3:{
-
+            case 3: //Caso para la lista Doble circular
+            {
                 switch (guardaOb) {
                 case 1:
                 {
@@ -270,9 +273,10 @@ int main(int argc, char *argv[])
                 }
                 break;
             }
-            case 4:
+            case 4: //Caso para la cola
             {
-                switch (guardaOb) {
+                switch (guardaOb)
+                {
                 case 1:
                 {
                     cola<int>* colaPrueba2 = new cola<int>();
@@ -314,7 +318,8 @@ int main(int argc, char *argv[])
                 }
                 break;
             }
-            case 5:{
+            case 5: //Caso para la pila
+            {
                 switch (guardaOb) {
                 case 1:
                 {
