@@ -36,6 +36,8 @@ class listaDoble
         void cambio(int,int);
         bool menor(int,int);
         bool mayor(int,int);
+		T getDato(int); //Cambio David
+        int cantDatos(); //Cambio David
 };
 
 #endif // LISTADOBLE_H
