@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
     /*
     //Principales funciones del menu.
-        //Primero carga las palabras necesarias en una listadoble.
+        //Primero carga las palabras necesarias en una listadoble. yuyuyuyuyuyu
         listaDoble<listaDoble<char>> *biblioteca = new listaDoble<listaDoble<char>>();
         //Cargo las palabras.
         char c;
