@@ -1,9 +1,78 @@
 
 //#include "algoritmos.h"
 
-#include<iostream>
-//#include <stdio.h>
-//#include <stdlib.h>
+#include <stdio.h>
+#include <cstdlib>
+#include <iostream>
+#include <cstdlib>
+#include <typeinfo>
+#include <string>
+#include <fstream>
+#include "listasimple.h"
+
+using namespace std;
+
+bool mayor(int inicio,int final){
+    if(inicio>final){
+        return true;
+    }else{
+        return false;
+    }
+}
+bool mayor(char inicio,char final){
+    cout<<"char";
+    int num1= ("d%",inicio);
+    int num2= ("d%",final);
+    if(num1>num2){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+bool mayor(string inicio,string final){
+    char primera1 = inicio[0];
+    char primera2 = final[0];
+    int num1 = ("d%",primera1);
+    int num2 = ("d%",primera2);
+    if(num1>num2){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
+bool menor(int inicio,int final){
+    if(inicio<final){
+        return true;
+    }else{
+        return false;
+    }
+}
+bool menor(char inicio,char final){
+    int num1= ("d%",inicio);
+    int num2= ("d%",final);
+    if(num1<num2){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+bool menor(string inicio,string final){
+    char primera1 = inicio[0];
+    char primera2 = final[0];
+    int num1 = ("d%",primera1);
+    int num2 = ("d%",primera2);
+    if(num1<num2){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
 
 void tri_insertion(int* t) //YOSUA BLANCO DIAZ
 {
@@ -16,10 +85,11 @@ void tri_insertion(int* t) //YOSUA BLANCO DIAZ
         t[j] = en_cours;
     }
 }
+
 template <class T>
-void tri_bulle(T tableau)  //YOSUA BLANCO DIAZ
+void tri_bulle(T tableau)  //YOSUA BLANCO DIAZ // LISTO CON :INT,CHAR
 {
-    std::cout<<"Tri Bulle: ";
+    std::cout<<"Ordenando "<<endl;
     int passage = 0;
     bool permutation = true;
     int en_cours;
@@ -27,19 +97,17 @@ void tri_bulle(T tableau)  //YOSUA BLANCO DIAZ
     {
         permutation = false;
         passage++;
-        for(en_cours=0; en_cours<20-passage; en_cours++)
+
+        for(en_cours=0; en_cours<(tableau->cantDatos()+1)-passage; en_cours++)
         {
-            if(tableau->mayor(en_cours,en_cours+1)) // tableau.mayor(en_cours,en_cours+1,tipo de dato)
+            if(mayor(tableau->sacarDatos(en_cours),tableau->sacarDatos(en_cours+1)))
             {
                 permutation = true;
-                //on echange les deux elements
-                //int temp = tableau[en_cours];
-                //tableau[en_cours] = tableau[en_cours+1];
-                //tableau[en_cours+1] = temp;
                 tableau->cambio(en_cours,en_cours+1);
             }
         }
     }
+    cout<<"ordenado";
 }
 
 void bulle(int* tableau, int p) {  // YOSUA BLANCO DIAZ

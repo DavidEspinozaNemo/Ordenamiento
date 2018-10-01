@@ -2,65 +2,7 @@
 #include <iostream>
 using namespace std;
 
-template <class T>
-bool listaDoble<T>::mayor(int inicio,int final){
-    T dato1;
-    NodoListaDoble* nodo_inicio;
-    NodoListaDoble* aux = primero;
-    NodoListaDoble* nodo_final;
-    int contador = 0; //0 para la primera pos
-    do{
-        if(contador == inicio){
-            nodo_inicio = aux; //coloca inicio
-        }else if(contador == final){
-            nodo_final = aux;  //coloca final
-        }
-        aux=aux->siguiente;
-        contador++;
-    }while(aux!=NULL);
-    if(nodo_final!=NULL && nodo_inicio!=NULL){
-        if(nodo_inicio->elemento > nodo_final->elemento){
-            cout<<"si";
-            return true;
-        }else{
-            cout<<"no";
-            return false;
-        }
-    }else{
-        cout<<"error en los indices";
-    }
 
-}
-
-template <class T>
-bool listaDoble<T>::menor(int inicio,int final){
-    T dato1;
-    NodoListaDoble* nodo_inicio;
-    NodoListaDoble* aux = primero;
-    NodoListaDoble* nodo_final;
-    int contador = 0; //0 para la primera pos
-    do{
-        if(contador == inicio){
-            nodo_inicio = aux; //coloca inicio
-        }else if(contador == final){
-            nodo_final = aux;  //coloca final
-        }
-        aux=aux->siguiente;
-        contador++;
-    }while(aux!=NULL);
-    if(nodo_final!=NULL && nodo_inicio!=NULL){
-        if(nodo_inicio->elemento < nodo_final->elemento){
-            cout<<"si";
-            return true;
-        }else{
-            cout<<"no";
-            return false;
-        }
-    }else{
-        cout<<"error en los indices";
-    }
-
-}
 template <class T>
 void listaDoble<T>::cambio(int inicio,int final){
     T dato1;

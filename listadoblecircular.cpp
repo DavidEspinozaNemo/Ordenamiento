@@ -2,65 +2,8 @@
 #include <iostream>
 using namespace std;
 
-template <class T>
-bool listaDobleCircular<T>::mayor(int inicio,int final){
-    T dato1;
-    NodoListaDobleCircular* nodo_inicio;
-    NodoListaDobleCircular* aux = primero;
-    NodoListaDobleCircular* nodo_final;
-    int contador = 0; //0 para la primera pos
-    do{
-        if(contador == inicio){
-            nodo_inicio = aux; //coloca inicio
-        }else if(contador == final){
-            nodo_final = aux;  //coloca final
-        }
-        aux=aux->siguiente;
-        contador++;
-    }while(aux!=primero);
-    if(nodo_final!=NULL && nodo_inicio!=NULL){
-        if(nodo_inicio->elemento > nodo_final->elemento){
-            cout<<"si";
-            return true;
-        }else{
-            cout<<"no";
-            return false;
-        }
-    }else{
-        cout<<"error en los indices";
-    }
 
-}
 
-template <class T>
-bool listaDobleCircular<T>::menor(int inicio,int final){
-    T dato1;
-    NodoListaDobleCircular* nodo_inicio;
-    NodoListaDobleCircular* aux = primero;
-    NodoListaDobleCircular* nodo_final;
-    int contador = 0; //0 para la primera pos
-    do{
-        if(contador == inicio){
-            nodo_inicio = aux; //coloca inicio
-        }else if(contador == final){
-            nodo_final = aux;  //coloca final
-        }
-        aux=aux->siguiente;
-        contador++;
-    }while(aux!=primero);
-    if(nodo_final!=NULL && nodo_inicio!=NULL){
-        if(nodo_inicio->elemento < nodo_final->elemento){
-            cout<<"si";
-            return true;
-        }else{
-            cout<<"no";
-            return false;
-        }
-    }else{
-        cout<<"error en los indices";
-    }
-
-}
 
 template <class T>
 void listaDobleCircular<T>::cambio(int inicio,int final){

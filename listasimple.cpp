@@ -1,75 +1,41 @@
+#include "claseextra.cpp"
 #include "listasimple.h"
 #include <iostream>
 #include <sstream>
+#include <stdio.h>
+
+
 using namespace std;
-
-
-
 template <class T>
-bool listaSimple<T>::mayor(int inicio,int final){
-    T dato1;
-    NodoListaSimple* nodo_inicio;
-    NodoListaSimple* aux = primero;
-    NodoListaSimple* nodo_final;
-    int contador = 0; //0 para la primera pos
-    do{
-        if(contador == inicio){
-            nodo_inicio = aux; //coloca inicio
-        }else if(contador == final){
-            nodo_final = aux;  //coloca final
-        }
-        aux=aux->siguiente;
-        contador++;
-    }while(aux!=NULL);
-    if(nodo_final!=NULL && nodo_inicio!=NULL){
-            int num1 = ("%d",nodo_inicio->elemento);
-            int num2 = ("%d",nodo_final->elemento);
-            if(num1 > num2){
-                cout<<"si";
-                return true;
-            }else{
-                cout<<"no";
-                return false;
-            }
-    }else{
-        cout<<"error en los indices";
+int listaSimple<T>::cantDatos(){
+    NodoListaSimple* n;
+    n = primero;
+    int cant = 0;
+    while(n->siguiente != NULL){
+        cant++;
+        n = n->siguiente;
     }
-
+    return cant;
 }
+
 template <class T>
-bool listaSimple<T>::menor(int inicio,int final){
-    T dato1;
-    NodoListaSimple* nodo_inicio;
+T listaSimple<T>::sacarDatos(int indice){
     NodoListaSimple* aux = primero;
-    NodoListaSimple* nodo_final;
-    int contador = 0; //0 para la primera pos
+    NodoListaSimple* nodo;
+    int contador=0;
     do{
-        if(contador == inicio){
-            nodo_inicio = aux; //coloca inicio
-        }else if(contador == final){
-            nodo_final = aux;  //coloca final
+        if(contador == indice){
+            nodo = aux;
         }
         aux=aux->siguiente;
         contador++;
     }while(aux!=NULL);
-    if(nodo_final!=NULL && nodo_inicio!=NULL){
-        int num1 = ("%d",nodo_inicio->elemento);
-        int num2 = ("%d",nodo_final->elemento);
-        if( num1 < num2){
-            cout<<"si";
-            return true;
-        }else{
-            cout<<"no";
-            return false;
-        }
-    }else{
-        cout<<"error en los indices";
-    }
-
+    return nodo->elemento;
 }
 
 template <class T>
 void listaSimple<T>::cambio(int inicio,int final){
+    cout<<"Moviendo"<<endl;
     T dato1;
     NodoListaSimple* nodo_inicio;
     NodoListaSimple* aux = primero;

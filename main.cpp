@@ -20,39 +20,6 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-
-    /*
-    //Principales funciones del menu.
-        //Primero carga las palabras necesarias en una listadoble. yuyuyuyuyuyu
-        listaDoble<listaDoble<char>> *biblioteca = new listaDoble<listaDoble<char>>();
-        //Cargo las palabras.
-        char c;
-        cout << " Lectura y escritura del archivo anterior\n";
-
-        ifstream fichero1("Biblioteca", ios::in);
-        //Ese es un ejemplo de como guardar un Commobject Palabra
-        listaDoble<char> *LaPalabra = new listaDoble<char>();
-        Palabra *aux = new Palabra(LaPalabra);
-
-        while(fichero1.get(c)){
-            if(c == ',') {
-                biblioteca->insertar(*LaPalabra);
-                LaPalabra = new listaDoble<char>();
-                cout << "\n (";
-                aux->printDato();
-                cout << " )\n";
-                aux = new Palabra(LaPalabra);
-                cout << " -> ";
-            }
-            else {
-                aux->insertarElemento(c);
-                cout.put(c);
-            }
-        }
-        cout << " Fin\n";
-        fichero1.close();
-            */
-
         //Pregunta, Que estructura quiere usar?
         int opcionEs = 0, opcionOb = 0, opcionOr = 0, cantidadObjetos = 0;
         int guardaEs=0,guardaOb=0,guardaOr=0,guardaCantidad=0;
