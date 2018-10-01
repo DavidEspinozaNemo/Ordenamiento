@@ -147,3 +147,24 @@ void listaDoble<T>::mostrarLista(){
         n=n->siguiente;
     }while(n!=NULL);
 }
+
+//Cambio David
+template <class T>
+T listaDoble<T>::getDato(int pos){
+    NodoListaDoble* n;
+    n = primero;
+    for(int i = 0; i<pos; i++) n = n->siguiente;
+    return n->elemento;
+}
+
+template <class T>
+int listaDoble<T>::cantDatos(){
+    NodoListaDoble* n;
+    n = primero;
+    int cant = 0;
+    while(n->siguiente != NULL){
+        cant++;
+        n = n->siguiente;
+    }
+    return cant;
+}
