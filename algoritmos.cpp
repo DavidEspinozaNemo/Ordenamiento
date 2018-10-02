@@ -30,15 +30,40 @@ bool mayor(char inicio,char final){
 }
 
 bool mayor(string inicio,string final){
-    char primera1 = inicio[0];
-    char primera2 = final[0];
-    int num1 = ("d%",primera1);
-    int num2 = ("d%",primera2);
-    if(num1>num2){
-        return true;
+    int cantidad1 = inicio.size();
+    int cantidad2 = final.size();
+    int contador1=0;
+    int contador2=0;
+    if(cantidad1<cantidad2){
+        for(contador1=0;contador1<cantidad1;contador1++){
+            char primera1 = inicio[contador1];
+            char primera2 = final[contador1];
+            int num1 = ("d%",primera1);
+            int num2 = ("d%",primera2);
+            if(num1>num2){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+
     }else{
-        return false;
+        for(contador2=0;contador2<cantidad2;contador2++){
+            char primera1 = inicio[contador2];
+            char primera2 = final[contador2];
+            int num1 = ("d%",primera1);
+            int num2 = ("d%",primera2);
+            if(num1>num2){
+                return true;
+            }else{
+                return false;
+            }
+        }
     }
+
+
+
 }
 
 
@@ -154,7 +179,6 @@ void tri_selection(T tableau, int taille) // YOSUA BLANCO DIAZ
 }
 
 
-
 void tri_insertion(int* t, int gap, int debut) // PARTE DEL SHELL  // YOSUA BLANCO DIAZ
 {
     int j,en_cours;
@@ -248,33 +272,35 @@ void print(T arr[], int n)
 //----------------- quickSort ------------------
 
 template <class T>
-void quicksort(T *a, int primero, int ultimo)
+void quicksort(T *tabla, int primero, int ultimo)
 {
     int i, j, central;
-    T pivote;
+    //int pivote;
 
     central = (primero + ultimo) / 2;
-    pivote = a[central];
+    //pivote = tabla[central];
     i = primero;
     j = ultimo;
 
     do {
-        while (a[i] < pivote) i++;
-        while (a[j] > pivote) j--;
+        while (menor(tabla->sacarDatos(i),tabla->sacarDatos(central))) i++; //tabla[i] < pivote
+        while (mayor(tabla->sacarDatos(j),tabla->sacarDatos(central))) j--; //tabla[j] > pivote
         if (i <= j)
         {
-            T temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
+            //T temp = tabla[i];
+            //tabla[i] = tabla[j];
+
+            //tabla[j] = temp;
+            tabla->cambio(i,j);
             i++;
             j--;
         }
     }while (i <= j);
 
     if (primero < j)
-        quicksort(a, primero, j); // mismo proceso con sublista izqda
+        quicksort(tabla, primero, j); // mismo proceso con sublista izqda
     if (i < ultimo)
-        quicksort(a, i, ultimo); // mismo proceso con sublista drcha
+        quicksort(tabla, i, ultimo); // mismo proceso con sublista drcha
 }
 
 //------------------ Binsort -----------------------------

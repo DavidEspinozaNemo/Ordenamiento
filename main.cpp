@@ -125,8 +125,11 @@ int main(int argc, char *argv[])
                             //tri_shell(l); //FUNCIONA
                             break;
                         }
-
-
+                        case 10:{
+                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();
+                            break;
+                        }
                         } //->Para los algoritmos
 
                         break;
@@ -568,14 +571,19 @@ int main(int argc, char *argv[])
                     case 1: //Numeros
                     {
                         cola<int>* colaPrueba2 = new cola<int>();
-                        listaDoble<int> *aux = new listaDoble<int>();
-                        aux = generarNumeros(guardaCantidad);
+                        listaDoble<int> *listaPrueba2 = new listaDoble<int>();
+
+                        listaPrueba2 = generarNumeros(guardaCantidad);
+
+
                         for(int x=0;x<guardaCantidad;x++){
-                            colaPrueba2->insertar(aux->getDato(x));
+                            colaPrueba2->insertar(listaPrueba2->getDato(x));
                         }
-                        delete(aux);
+
 
                         colaPrueba2->mostrarCola(*colaPrueba2);
+
+
                         //Swich(opcionOb) ->Para los algoritmos
                         break;
                     }
