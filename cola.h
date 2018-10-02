@@ -10,13 +10,9 @@ private:
         public:
             NodoCola* siguiente;
             T elemento;
-            int es_string;
-            int es_objto;
-            NodoCola (T x,int str,int obj)
+            NodoCola (T x)
             {
                 elemento = x;
-                es_objto=obj;
-                es_string=str;
                 siguiente = nullptr;
             }
         };
@@ -31,7 +27,7 @@ public:
             T quitar();
             T frenteCola()const;
             void borrarCola();
-            void insertar(T elemento,int,int);
+            void insertar(T elemento);
             void mostrarCola(cola<T>& q);
             bool colaVacia() const;
 

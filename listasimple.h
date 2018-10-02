@@ -1,6 +1,5 @@
 #ifndef LISTASIMPLE_H
 #define LISTASIMPLE_H
-//#include "clseextra.cpp"
 #include <iostream>
 #include <stdio.h>
 #include <cstdlib>
@@ -15,14 +14,13 @@ class listaSimple
     public:
         NodoListaSimple* siguiente;
         T elemento;
-        int es_string=0;
-        int es_objeto=0;
-        NodoListaSimple(T x,int str,int obj)
+
+        NodoListaSimple(T x)
         {
         elemento = x;
         siguiente = NULL;
-        es_string= str;
-        es_objeto=obj;
+
+
         }
     };
     NodoListaSimple* primero;
@@ -31,7 +29,7 @@ class listaSimple
         {
             primero = NULL;
         }
-        void insertar(T elemento,int,int);
+        void insertar(T elemento);
         void insertarPos(T elemento,int);
         void cambio(int,int);
         bool menor(int,int);

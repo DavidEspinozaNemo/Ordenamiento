@@ -2,9 +2,36 @@
 #include <iostream>
 using namespace std;
 
+template <class T>
+int listaDoble<T>::cantDatos(){
+    NodoListaDoble* n;
+    n = primero;
+    int cant = 0;
+    while(n->siguiente != NULL){
+        cant++;
+        n = n->siguiente;
+    }
+    return cant;
+}
+
+template <class T>
+T listaDoble<T>::sacarDatos(int indice){
+    NodoListaDoble* aux = primero;
+    NodoListaDoble* nodo;
+    int contador=0;
+    do{
+        if(contador == indice){
+            nodo = aux;
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=NULL);
+    return nodo->elemento;
+}
 
 template <class T>
 void listaDoble<T>::cambio(int inicio,int final){
+
     T dato1;
     NodoListaDoble* nodo_inicio;
     NodoListaDoble* aux = primero;
@@ -59,10 +86,10 @@ void listaDoble<T>::insertarPos(T elemento,int pos)
     }
 }
 template <class T>
-void listaDoble<T>::insertar(T elemento,int str,int obj)
+void listaDoble<T>::insertar(T elemento)
 {
     NodoListaDoble* nuevo;
-    nuevo = new NodoListaDoble(elemento,str,obj);
+    nuevo = new NodoListaDoble(elemento);
     if(ListaVacia()){
         primero = nuevo;
     }else {
@@ -99,14 +126,3 @@ T listaDoble<T>::getDato(int pos){
     return n->elemento;
 }
 
-template <class T>
-int listaDoble<T>::cantDatos(){
-    NodoListaDoble* n;
-    n = primero;
-    int cant = 0;
-    while(n->siguiente != NULL){
-        cant++;
-        n = n->siguiente;
-    }
-    return cant;
-}

@@ -1,6 +1,5 @@
 
-//#include "algoritmos.h"
-
+#include "claseextra.cpp"
 #include <stdio.h>
 #include <cstdlib>
 #include <iostream>
@@ -8,7 +7,7 @@
 #include <typeinfo>
 #include <string>
 #include <fstream>
-#include "listasimple.h"
+//#include "listasimple.h"
 
 using namespace std;
 
@@ -20,7 +19,7 @@ bool mayor(int inicio,int final){
     }
 }
 bool mayor(char inicio,char final){
-    cout<<"char";
+    //cout<<"char";
     int num1= ("d%",inicio);
     int num2= ("d%",final);
     if(num1>num2){
@@ -42,6 +41,18 @@ bool mayor(string inicio,string final){
     }
 }
 
+
+bool mayor(persona* inicio,persona* final){
+    int primera1 = inicio->getCedula();
+    int primera2 = final->getCedula();
+    int num1 = ("d%",primera1);
+    int num2 = ("d%",primera2);
+    if(num1>num2){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 bool menor(int inicio,int final){
     if(inicio<final){
@@ -89,7 +100,7 @@ void tri_insertion(int* t) //YOSUA BLANCO DIAZ
 template <class T>
 void tri_bulle(T tableau)  //YOSUA BLANCO DIAZ // LISTO CON :INT,CHAR
 {
-    std::cout<<"Ordenando "<<endl;
+    //std::cout<<"Ordenando "<<endl;
     int passage = 0;
     bool permutation = true;
     int en_cours;
@@ -107,7 +118,7 @@ void tri_bulle(T tableau)  //YOSUA BLANCO DIAZ // LISTO CON :INT,CHAR
             }
         }
     }
-    cout<<"ordenado";
+    //cout<<"ordenado";
 }
 
 void bulle(int* tableau, int p) {  // YOSUA BLANCO DIAZ

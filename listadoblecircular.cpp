@@ -4,6 +4,32 @@ using namespace std;
 
 
 
+template <class T>
+int listaDobleCircular<T>::cantDatos(){
+    NodoListaDobleCircular* n;
+    n = primero;
+    int cant = 0;
+    while(n->siguiente != primero){
+        cant++;
+        n = n->siguiente;
+    }
+    return cant;
+}
+
+template <class T>
+T listaDobleCircular<T>::sacarDatos(int indice){
+    NodoListaDobleCircular* aux = primero;
+    NodoListaDobleCircular* nodo;
+    int contador=0;
+    do{
+        if(contador == indice){
+            nodo = aux;
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=primero);
+    return nodo->elemento;
+}
 
 template <class T>
 void listaDobleCircular<T>::cambio(int inicio,int final){
@@ -63,10 +89,10 @@ void listaDobleCircular<T>::insertarPos(T elemento,int pos){
      }
 }
 template <class T>
-void listaDobleCircular<T>::insertar(T elemento,int str,int obj)
+void listaDobleCircular<T>::insertar(T elemento)
 {
     NodoListaDobleCircular* nuevo;
-    nuevo = new NodoListaDobleCircular(elemento,str,obj);
+    nuevo = new NodoListaDobleCircular(elemento);
     if(ListaVacia()){
         primero = nuevo;
         primero->siguiente=primero;

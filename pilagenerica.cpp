@@ -3,10 +3,10 @@
 #include <iostream>
 using namespace std;
 template <class T>
-void PilaGenerica<T>::insertar(T elemento,int str,int obj)
+void PilaGenerica<T>::insertar(T elemento)
 {
     NodoPila* nuevo;
-    nuevo = new NodoPila(elemento,str,obj);
+    nuevo = new NodoPila(elemento);
     nuevo -> siguiente = cima;
     cima = nuevo;
 }

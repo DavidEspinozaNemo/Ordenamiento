@@ -1,4 +1,3 @@
-#include "claseextra.cpp"
 #include "listasimple.h"
 #include <iostream>
 #include <sstream>
@@ -35,7 +34,7 @@ T listaSimple<T>::sacarDatos(int indice){
 
 template <class T>
 void listaSimple<T>::cambio(int inicio,int final){
-    cout<<"Moviendo"<<endl;
+
     T dato1;
     NodoListaSimple* nodo_inicio;
     NodoListaSimple* aux = primero;
@@ -84,11 +83,11 @@ void listaSimple<T>::insertarPos(T elemento,int pos){
     }
 }
 template <class T>
-void listaSimple<T>::insertar(T elemento,int str,int obj)
+void listaSimple<T>::insertar(T elemento)
 {
 
     NodoListaSimple* nuevo;
-    nuevo = new NodoListaSimple(elemento,str,obj);
+    nuevo = new NodoListaSimple(elemento);
     NodoListaSimple* aux = primero;
     if(ListaVacia()){
         primero = nuevo;

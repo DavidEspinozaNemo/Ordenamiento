@@ -1,5 +1,3 @@
-#ifndef CLASEEXTRA_CPP
-#define CLASEEXTRA_CPP
 
 #include <iostream>
 #include <stdio.h>
@@ -22,7 +20,12 @@ class persona
             this->edad=eda;
             this->cedula=ced;
         }
+        int getCedula();
 
 };
 
-#endif // LISTADOBLE_H
+int persona::getCedula(){
+    return this->cedula;
+}
+
+

@@ -4,10 +4,10 @@
 using namespace std;
 
 template <class T>
-void cola<T> :: insertar(T elemento,int str,int obj)
+void cola<T> :: insertar(T elemento)
 {
     NodoCola* nuevo;
-    nuevo = new NodoCola (elemento,str,obj);
+    nuevo = new NodoCola (elemento);
     if (colaVacia())
     {
         frente = nuevo;
