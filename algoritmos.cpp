@@ -55,6 +55,7 @@ bool mayor(persona* inicio,persona* final){
 }
 
 bool menor(int inicio,int final){
+
     if(inicio<final){
         return true;
     }else{
@@ -121,7 +122,7 @@ void tri_bulle(T tableau)  //YOSUA BLANCO DIAZ // LISTO CON :INT,CHAR
     //cout<<"ordenado";
 }
 
-void bulle(int* tableau, int p) {  // YOSUA BLANCO DIAZ
+void bulle(int* tableau, int p) {  // YOSUA BLANCO DIAZ //LISTO
     int i_b = p;
     while ((i_b>0) && (tableau[i_b]<tableau[i_b - 1])) {
         int t = tableau[i_b -1];
@@ -136,19 +137,19 @@ void tri_gnome (int* tableau) {     //YOSUA BLANCO DIAZ PARTE DEL BULLE
     for (int i_i=0;i_i<20;i_i++) bulle(tableau,i_i);
 }
 
-
-void tri_selection(int *tableau, int taille) // YOSUA BLANCO DIAZ
+template <class T>
+void tri_selection(T tableau, int taille) // YOSUA BLANCO DIAZ
 {
     std::cout<<"Tri Selection: ";
-     int en_cours, plus_petit, j, temp;
-
-     for (en_cours = 0; en_cours < taille - 1; en_cours++)
+     int en_cours, plus_petit, j;
+     for (en_cours = 0; en_cours < taille-1 ; en_cours++)
      {
          plus_petit = en_cours;
-         for (j = en_cours; j < taille; j++) if (tableau[j] < tableau[plus_petit]) plus_petit = j;
-          temp = tableau[en_cours];
-          tableau[en_cours] = tableau[plus_petit];
-          tableau[plus_petit] = temp;
+         for (j = en_cours; j < taille; j++)
+             if (menor(tableau->sacarDatos(j),tableau->sacarDatos(plus_petit)))
+                 plus_petit = j;
+         tableau->cambio(en_cours,plus_petit);
+
      }
 }
 

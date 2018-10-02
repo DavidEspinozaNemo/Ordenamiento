@@ -102,8 +102,8 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
-                            //tri_selection(listaPrueba2,20); // FUNCIONA
-
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
                             break;
                         }
                         case 2:{
@@ -144,8 +144,8 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
-                            //tri_selection(listaPrueba2,20); // FUNCIONA
-
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
                             break;
                         }
                         case 2:{
