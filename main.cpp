@@ -118,11 +118,13 @@ int main(int argc, char *argv[])
                             break;
                         }
                         case 4:{
-                            //tri_gnome(listaPrueba2); //FUNCIONA
+                            tri_gnome(listaPrueba2);
+                            listaPrueba2->mostrarLista();
                             break;
                         }case 5:{
 
-                            //tri_shell(l); //FUNCIONA
+                            tri_shell(listaPrueba2);
+                            listaPrueba2->mostrarLista();//FUNCIONA
                             break;
                         }
                         case 10:{
@@ -163,11 +165,17 @@ int main(int argc, char *argv[])
                             break;
                         }
                         case 4:{
-                            //tri_gnome(listaPrueba2); //FUNCIONA
+                            tri_gnome(listaPrueba2);
+                            listaPrueba2->mostrarLista();
                             break;
                         }case 5:{
 
                             //tri_shell(l); //FUNCIONA
+                            break;
+                        }
+                        case 10:{
+                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();
                             break;
                         }
 
@@ -189,7 +197,8 @@ int main(int argc, char *argv[])
                         switch (guardaOr) {
                         case 1:{
                             //tri_selection(listaPrueba2,20); // FUNCIONA
-
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
                             break;
                         }
                         case 2:{
@@ -198,17 +207,24 @@ int main(int argc, char *argv[])
                             break;
                         }
                         case 3:{
-                            cout<<"entro";
+
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
                             break;
                         }
                         case 4:{
-                            //tri_gnome(listaPrueba2); //FUNCIONA
+                            tri_gnome(listaPrueba2);
+                            listaPrueba2->mostrarLista();
                             break;
                         }case 5:{
 
-                            //tri_shell(l); //FUNCIONA
+                            tri_shell(listaPrueba2); //FUNCIONA
+                            listaPrueba2->mostrarLista();
+                            break;
+                        }
+                        case 10:{
+                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();
                             break;
                         }
 
@@ -226,8 +242,8 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
-                            //tri_selection(listaPrueba2,20); // FUNCIONA
-
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
                             break;
                         }
                         case 2:{
@@ -236,17 +252,23 @@ int main(int argc, char *argv[])
                             break;
                         }
                         case 3:{
-                            cout<<"entro";
+
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
                             break;
                         }
                         case 4:{
-                            //tri_gnome(listaPrueba2); //FUNCIONA
+                            tri_gnome(listaPrueba2);
+                            listaPrueba2->mostrarLista();
                             break;
                         }case 5:{
 
                             //tri_shell(l); //FUNCIONA
+                            break;
+                        }
+                        case 10:{
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
                             break;
                         }
 

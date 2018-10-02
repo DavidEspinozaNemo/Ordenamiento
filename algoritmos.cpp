@@ -109,6 +109,18 @@ bool menor(string inicio,string final){
     }
 }
 
+bool menor(persona* inicio,persona* final){
+    int primera1 = inicio->getCedula();
+    int primera2 = final->getCedula();
+    int num1 = ("d%",primera1);
+    int num2 = ("d%",primera2);
+    if(num1<num2){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 
 
 void tri_insertion(int* t) //YOSUA BLANCO DIAZ
@@ -146,20 +158,18 @@ void tri_bulle(T tableau)  //YOSUA BLANCO DIAZ // LISTO CON :INT,CHAR
     }
     //cout<<"ordenado";
 }
-
-void bulle(int* tableau, int p) {  // YOSUA BLANCO DIAZ //LISTO
+template <class T>
+void bulle(T tableau, int p) {  // YOSUA BLANCO DIAZ //LISTO
     int i_b = p;
-    while ((i_b>0) && (tableau[i_b]<tableau[i_b - 1])) {
-        int t = tableau[i_b -1];
-        tableau[i_b - 1]= tableau[i_b];
-        tableau[i_b ] = t;
+    while ((i_b>0) && (menor(tableau->sacarDatos(i_b),tableau->sacarDatos(i_b-1)))) {//tableau[i_b]<tableau[i_b - 1]
+        tableau->cambio(i_b-1,i_b);
         i_b --;
     }
 }
-
-void tri_gnome (int* tableau) {     //YOSUA BLANCO DIAZ PARTE DEL BULLE
+template <class T>
+void tri_gnome (T tableau) {     //YOSUA BLANCO DIAZ PARTE DEL BULLE
     std::cout<<"Tri gnome: ";
-    for (int i_i=0;i_i<20;i_i++) bulle(tableau,i_i);
+    for (int i_i=0;i_i<tableau->cantDatos()+1;i_i++) bulle(tableau,i_i);
 }
 
 template <class T>
@@ -178,20 +188,20 @@ void tri_selection(T tableau, int taille) // YOSUA BLANCO DIAZ
      }
 }
 
-
-void tri_insertion(int* t, int gap, int debut) // PARTE DEL SHELL  // YOSUA BLANCO DIAZ
+template <class T>
+void tri_insertion(T t, int gap, int debut) // PARTE DEL SHELL  // YOSUA BLANCO DIAZ
 {
-    int j,en_cours;
-    for (int i = gap + debut; i < 20; i+=gap) {
-        en_cours = t[i];
-        for (j = i; j >= gap && t[j - gap] > en_cours; j-=gap) {
-            t[j] = t[j - gap];
+    int j;
+    for (int i = gap + debut; i < t->cantDatos()+1; i+=gap) {
+        //en_cours = t[i];
+        for (j = i; j >= gap && mayor(t->sacarDatos(j-gap),t->sacarDatos(i)); j-=gap) {//t[j - gap] > en_cours
+            t->cambio(j,j-gap);//t[j] = t[j - gap];
         }
-        t[j] = en_cours;
+        t->cambio(i,j);//t[j] = en_cours;
     }
 }
-
-void tri_shell(int* t) {  // YOSUA BLANCO DIAZ
+template <class T>
+void tri_shell(T t) {  // YOSUA BLANCO DIAZ
     std::cout<<"Tri Shell: ";
     int intervalles[5]={6,4,3,2,1};
     for (int ngap=0;ngap<5;ngap++) {
@@ -275,10 +285,8 @@ template <class T>
 void quicksort(T *tabla, int primero, int ultimo)
 {
     int i, j, central;
-    //int pivote;
 
     central = (primero + ultimo) / 2;
-    //pivote = tabla[central];
     i = primero;
     j = ultimo;
 
@@ -287,10 +295,6 @@ void quicksort(T *tabla, int primero, int ultimo)
         while (mayor(tabla->sacarDatos(j),tabla->sacarDatos(central))) j--; //tabla[j] > pivote
         if (i <= j)
         {
-            //T temp = tabla[i];
-            //tabla[i] = tabla[j];
-
-            //tabla[j] = temp;
             tabla->cambio(i,j);
             i++;
             j--;
