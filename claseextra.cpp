@@ -1,4 +1,5 @@
-
+#ifndef CLASEEXTRA_CPP
+#define CLASEEXTRA_CPP
 #include <iostream>
 #include <stdio.h>
 #include <cstdlib>
@@ -24,8 +25,6 @@ class persona
 
 };
 
-int persona::getCedula(){
-    return this->cedula;
-}
 
 
+#endif

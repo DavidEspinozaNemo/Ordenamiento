@@ -1,7 +1,13 @@
+#ifndef COLA_CPP
+#define COLA_CPP
 
 #include "cola.h"
 #include <iostream>
+#include <sstream>
+#include <stdio.h>
+#include "claseextra.cpp"
 using namespace std;
+
 
 template <class T>
 void cola<T> :: insertar(T elemento)
@@ -71,3 +77,4 @@ void cola<T>::mostrarCola(cola<T>& q)
     }
     std::cout << std::endl;
 }
+#endif

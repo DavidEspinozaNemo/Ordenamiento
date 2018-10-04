@@ -1,7 +1,12 @@
-
+#ifndef PILAGENERICA_CPP
+#define PILAGENERICA_CPP
 #include "PilaGenerica.h"
 #include <iostream>
+#include <sstream>
+#include <stdio.h>
+#include "claseextra.cpp"
 using namespace std;
+
 template <class T>
 void PilaGenerica<T>::insertar(T elemento)
 {
@@ -53,3 +58,4 @@ void PilaGenerica<T>::mostrarPila(){
         cout<<n->elemento<<endl;
     }
 }
+#endif

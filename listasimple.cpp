@@ -1,10 +1,13 @@
+#ifndef LISTASIMPLE_CPP
+#define LISTASIMPLE_CPP
+
 #include "listasimple.h"
 #include <iostream>
 #include <sstream>
 #include <stdio.h>
-
-
+#include "claseextra.cpp"
 using namespace std;
+
 template <class T>
 int listaSimple<T>::cantDatos(){
     NodoListaSimple* n;
@@ -17,6 +20,59 @@ int listaSimple<T>::cantDatos(){
     return cant;
 }
 
+template  <class T>
+void listaSimple<T>::sustituirValor(int elemento,int pos){
+    NodoListaSimple* aux = primero;
+    NodoListaSimple* nodo;
+    int contador=0;
+    do{
+        if(contador == pos){
+            aux->elemento = elemento;
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=NULL);
+}
+template  <class T>
+void listaSimple<T>::sustituirValor(char elemento,int pos){
+    NodoListaSimple* aux = primero;
+    NodoListaSimple* nodo;
+    int contador=0;
+    do{
+        if(contador == pos){
+            aux->elemento = elemento;
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=NULL);
+}
+template  <class T>
+void listaSimple<T>::sustituirValor(string elemento,int pos){
+    NodoListaSimple* aux = primero;
+    NodoListaSimple* nodo;
+    int contador=0;
+    do{
+        if(contador == pos){
+            aux->elemento = elemento;
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=NULL);
+}
+
+template  <class T>
+void listaSimple<T>::sustituirValor(persona *elemento,int pos){
+    NodoListaSimple* aux = primero;
+    NodoListaSimple* nodo;
+    int contador=0;
+    do{
+        if(contador == pos){
+            aux->elemento = elemento;
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=NULL);
+}
 template <class T>
 T listaSimple<T>::sacarDatos(int indice){
     NodoListaSimple* aux = primero;
@@ -40,6 +96,9 @@ void listaSimple<T>::cambio(int inicio,int final){
     NodoListaSimple* aux = primero;
     NodoListaSimple* nodo_final;
     int contador = 0; //1 para la primera pos
+    if(inicio!=final){
+
+
     do{
         if(contador == inicio){
             nodo_inicio = aux; //coloca inicio
@@ -50,13 +109,14 @@ void listaSimple<T>::cambio(int inicio,int final){
         contador++;
     }while(aux!=NULL);
     if(nodo_final!=NULL && nodo_inicio!=NULL){
+
         dato1 = nodo_final->elemento;
         nodo_final->elemento=nodo_inicio->elemento;
         nodo_inicio->elemento=dato1;
     }else{
         cout<<"error en los indices";
     }
-
+    }
 }
 
 template <class T>
@@ -115,3 +175,5 @@ void listaSimple<T>::mostrarLista(){
         n=n->siguiente;
     }while(n!=NULL);
 }
+
+#endif

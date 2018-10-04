@@ -1,7 +1,6 @@
 #include <QCoreApplication>
 #include "PilaGenerica.cpp"
 #include "cola.cpp"
-
 #include "listadoble.cpp"
 #include "listadoblecircular.cpp"
 #include "listasimple.cpp"
@@ -92,6 +91,7 @@ int main(int argc, char *argv[])
                     case 1: //numeros
                     {
                         listaSimple<int>* listaPrueba2 = new listaSimple<int>();
+                        listaSimple<int>* listaAux = new listaSimple<int>();
                         listaDoble<int> *aux = new listaDoble<int>();
                         aux = generarNumeros(guardaCantidad);
                         for(int x=0;x<guardaCantidad;x++){
@@ -107,23 +107,22 @@ int main(int argc, char *argv[])
                             break;
                         }
                         case 2:{
-                            //tri_insertion(listaPrueba2) //FUNCIONA;
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
 
                             break;
                         }
                         case 3:{
-
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
                             break;
                         }
                         case 4:{
-                            tri_gnome(listaPrueba2);
+                            tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
                             break;
                         }case 5:{
-
-                            tri_shell(listaPrueba2);
+                            tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
                             break;
                         }
@@ -140,6 +139,7 @@ int main(int argc, char *argv[])
                     {
                         listaSimple<char>* listaPrueba2 = new listaSimple<char>();
                         listaDoble<char> *aux = new listaDoble<char>();
+                        listaSimple<char>* listaAux = new listaSimple<char>();
                         aux = generarChars(guardaCantidad);
                         for(int x=0;x<guardaCantidad;x++){
                             listaPrueba2->insertar(aux->getDato(x));
@@ -154,23 +154,23 @@ int main(int argc, char *argv[])
                             break;
                         }
                         case 2:{
-                            //tri_insertion(listaPrueba2) //FUNCIONA;
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
 
                             break;
                         }
                         case 3:{
-
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
                             break;
                         }
                         case 4:{
-                            tri_gnome(listaPrueba2);
+                            tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
                             break;
                         }case 5:{
-
-                            //tri_shell(l); //FUNCIONA
+                            tri_shell(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();//FUNCIONA
                             break;
                         }
                         case 10:{
@@ -178,8 +178,6 @@ int main(int argc, char *argv[])
                             listaPrueba2->mostrarLista();
                             break;
                         }
-
-
                         }
                         break;
                     }
@@ -187,6 +185,7 @@ int main(int argc, char *argv[])
                     {
                         listaSimple<string>* listaPrueba2 = new listaSimple<string>();
                         listaDoble<string> *aux = new listaDoble<string>();
+                        listaSimple<string>* listaAux = new listaSimple<string>();
                         aux = generarPalabras(guardaCantidad);
                         for(int x=0;x<guardaCantidad;x++){
                             listaPrueba2->insertar(aux->getDato(x));
@@ -196,30 +195,28 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
-                            //tri_selection(listaPrueba2,20); // FUNCIONA
                             tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
                             listaPrueba2->mostrarLista();
                             break;
                         }
                         case 2:{
-                            //tri_insertion(listaPrueba2) //FUNCIONA;
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
 
                             break;
                         }
                         case 3:{
-
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
                             break;
                         }
                         case 4:{
-                            tri_gnome(listaPrueba2);
+                            tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
                             break;
                         }case 5:{
-
-                            tri_shell(listaPrueba2); //FUNCIONA
-                            listaPrueba2->mostrarLista();
+                            tri_shell(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();//FUNCIONA
                             break;
                         }
                         case 10:{
@@ -227,14 +224,13 @@ int main(int argc, char *argv[])
                             listaPrueba2->mostrarLista();
                             break;
                         }
-
-
                         }
                         break;
                     }
                     case 4: //Objeto
                     {
                         listaSimple<persona*>* listaPrueba2 = new listaSimple<persona*>();
+                        listaSimple<persona*>* listaAux = new listaSimple<persona*>();
                         persona* persona1 = new persona("yosua",21,116830903);
                         for(int x=0;x<guardaCantidad;x++){
                             listaPrueba2->insertar(persona1);
@@ -247,32 +243,30 @@ int main(int argc, char *argv[])
                             break;
                         }
                         case 2:{
-                            //tri_insertion(listaPrueba2) //FUNCIONA;
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
 
                             break;
                         }
                         case 3:{
-
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
                             break;
                         }
                         case 4:{
-                            tri_gnome(listaPrueba2);
+                            tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
                             break;
                         }case 5:{
-
-                            //tri_shell(l); //FUNCIONA
+                            tri_shell(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();//FUNCIONA
                             break;
                         }
                         case 10:{
-                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
                             break;
                         }
-
-
                         }
                         break;
                     }
@@ -286,6 +280,7 @@ int main(int argc, char *argv[])
                     {
                         listaDoble<int>* listaPrueba2 = new listaDoble<int>();
                         listaDoble<int> *aux = new listaDoble<int>();
+                        listaDoble<int> *listaAux = new listaDoble<int>();
                         aux = generarNumeros(guardaCantidad);
                         for(int x=0;x<guardaCantidad;x++){
                             listaPrueba2->insertar(aux->getDato(x));
@@ -295,31 +290,35 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
-                            //tri_selection(listaPrueba2,20); // FUNCIONA
-
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
                             break;
                         }
                         case 2:{
-                            //tri_insertion(listaPrueba2) //FUNCIONA;
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
 
                             break;
                         }
                         case 3:{
-                            cout<<"entro";
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
                             break;
                         }
                         case 4:{
-                            //tri_gnome(listaPrueba2); //FUNCIONA
+                            tri_shaker(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();
                             break;
                         }case 5:{
-
-                            //tri_shell(l); //FUNCIONA
+                            tri_shell(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();//FUNCIONA
                             break;
                         }
-
-
+                        case 10:{
+                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();
+                            break;
+                        }
                         }
                         break;
                     }
@@ -327,6 +326,7 @@ int main(int argc, char *argv[])
                     {
                         listaDoble<char>* listaPrueba2 = new listaDoble<char>();
                         listaDoble<char> *aux = new listaDoble<char>();
+                        listaDoble<char> *listaAux = new listaDoble<char>();
                         aux = generarChars(guardaCantidad);
                         for(int x=0;x<guardaCantidad;x++){
                             listaPrueba2->insertar(aux->getDato(x));
@@ -336,31 +336,35 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
-                            //tri_selection(listaPrueba2,20); // FUNCIONA
-
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
                             break;
                         }
                         case 2:{
-                            //tri_insertion(listaPrueba2) //FUNCIONA;
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
 
                             break;
                         }
                         case 3:{
-                            cout<<"entro";
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
                             break;
                         }
                         case 4:{
-                            //tri_gnome(listaPrueba2); //FUNCIONA
+                            tri_shaker(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();
                             break;
                         }case 5:{
-
-                            //tri_shell(l); //FUNCIONA
+                            tri_shell(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();//FUNCIONA
                             break;
                         }
-
-
+                        case 10:{
+                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();
+                            break;
+                        }
                         }
                         break;
                     }
@@ -368,6 +372,7 @@ int main(int argc, char *argv[])
                     {
                         listaDoble<string>* listaPrueba2 = new listaDoble<string>();
                         listaDoble<string> *aux = new listaDoble<string>();
+                        listaDoble<string> *listaAux = new listaDoble<string>();
                         aux = generarPalabras(guardaCantidad);
                         for(int x=0;x<guardaCantidad;x++){
                             listaPrueba2->insertar(aux->getDato(x));
@@ -377,43 +382,79 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
-                            //tri_selection(listaPrueba2,20); // FUNCIONA
-
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
                             break;
                         }
                         case 2:{
-                            //tri_insertion(listaPrueba2) //FUNCIONA;
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
 
                             break;
                         }
                         case 3:{
-                            cout<<"entro";
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
                             break;
                         }
                         case 4:{
-                            //tri_gnome(listaPrueba2); //FUNCIONA
+                            tri_shaker(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();
                             break;
                         }case 5:{
-
-                            //tri_shell(l); //FUNCIONA
+                            tri_shell(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();//FUNCIONA
                             break;
                         }
-
-
+                        case 10:{
+                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();
+                            break;
+                        }
                         }
                         break;
                     }
                     case 4: //objetos
                     {
                         listaDoble<persona*>* listaPrueba2 = new listaDoble<persona*>();
+                        listaDoble<persona*>* listaAux = new listaDoble<persona*>();
                         persona* persona1 = new persona("yosua",21,116830903);
                         for(int x=0;x<guardaCantidad;x++){
                             listaPrueba2->insertar(persona1);
                         }
                         listaPrueba2->mostrarLista();
+                        switch (guardaOr) {
+                        case 1:{
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
+                            break;
+                        }
+                        case 2:{
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
 
+                            break;
+                        }
+                        case 3:{
+                            tri_bulle(listaPrueba2);
+                            listaPrueba2->mostrarLista();
+                            break;
+                        }
+                        case 4:{
+                            tri_shaker(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();
+                            break;
+                        }case 5:{
+                            tri_shell(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            break;
+                        }
+                        case 10:{
+                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();
+                            break;
+                        }
+                        }
                         break;
                     }
                     }
@@ -426,6 +467,7 @@ int main(int argc, char *argv[])
                     {
                         listaDobleCircular<int>* listaPrueba2 = new listaDobleCircular<int>();
                         listaDoble<int> *aux = new listaDoble<int>();
+                        listaDobleCircular<int>* listaAux = new listaDobleCircular<int>();
                         aux = generarNumeros(guardaCantidad);
                         for(int x=0;x<guardaCantidad;x++){
                             listaPrueba2->insertar(aux->getDato(x));
@@ -435,31 +477,35 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
-                            //tri_selection(listaPrueba2,20); // FUNCIONA
-
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
                             break;
                         }
                         case 2:{
-                            //tri_insertion(listaPrueba2) //FUNCIONA;
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
 
                             break;
                         }
                         case 3:{
-                            cout<<"entro";
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
                             break;
                         }
                         case 4:{
-                            //tri_gnome(listaPrueba2); //FUNCIONA
+                            tri_shaker(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();
                             break;
                         }case 5:{
-
-                            //tri_shell(l); //FUNCIONA
+                            tri_shell(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();//FUNCIONA
                             break;
                         }
-
-
+                        case 10:{
+                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();
+                            break;
+                        }
                         }
                         break;
                     }
@@ -467,6 +513,7 @@ int main(int argc, char *argv[])
                     {
                         listaDobleCircular<char>* listaPrueba2 = new listaDobleCircular<char>();
                         listaDoble<char> *aux = new listaDoble<char>();
+                        listaDobleCircular<char>* listaAux = new listaDobleCircular<char>();
                         aux = generarChars(guardaCantidad);
                         for(int x=0;x<guardaCantidad;x++){
                             listaPrueba2->insertar(aux->getDato(x));
@@ -476,31 +523,35 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
-                            //tri_selection(listaPrueba2,20); // FUNCIONA
-
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
                             break;
                         }
                         case 2:{
-                            //tri_insertion(listaPrueba2) //FUNCIONA;
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
 
                             break;
                         }
                         case 3:{
-                            cout<<"entro";
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
                             break;
                         }
                         case 4:{
-                            //tri_gnome(listaPrueba2); //FUNCIONA
+                            tri_shaker(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();
                             break;
                         }case 5:{
-
-                            //tri_shell(l); //FUNCIONA
+                            tri_shell(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();//FUNCIONA
                             break;
                         }
-
-
+                        case 10:{
+                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();
+                            break;
+                        }
                         }
                         break;
                     }
@@ -508,6 +559,7 @@ int main(int argc, char *argv[])
                     {
                         listaDobleCircular<string>* listaPrueba2 = new listaDobleCircular<string>();
                         listaDoble<string> *aux = new listaDoble<string>();
+                        listaDobleCircular<string>* listaAux = new listaDobleCircular<string>();
                         aux = generarPalabras(guardaCantidad);
                         for(int x=0;x<guardaCantidad;x++){
                             listaPrueba2->insertar(aux->getDato(x));
@@ -517,31 +569,35 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
-                            //tri_selection(listaPrueba2,20); // FUNCIONA
-
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
                             break;
                         }
                         case 2:{
-                            //tri_insertion(listaPrueba2) //FUNCIONA;
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
 
                             break;
                         }
                         case 3:{
-                            cout<<"entro";
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
                             break;
                         }
                         case 4:{
-                            //tri_gnome(listaPrueba2); //FUNCIONA
+                            tri_shaker(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();
                             break;
                         }case 5:{
-
-                            //tri_shell(l); //FUNCIONA
+                            tri_shell(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();//FUNCIONA
                             break;
                         }
-
-
+                        case 10:{
+                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();
+                            break;
+                        }
                         }
                         break;
                     }
@@ -549,42 +605,47 @@ int main(int argc, char *argv[])
                     {
                         listaDobleCircular<persona*>* listaPrueba2 = new listaDobleCircular<persona*>();
                         persona* persona1 = new persona("yosua",21,116830903);
+                        listaDobleCircular<persona*>* listaAux = new listaDobleCircular<persona*>();
                         for(int x=0;x<guardaCantidad;x++){
                             listaPrueba2->insertar(persona1);
                         }
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
-                            //tri_selection(listaPrueba2,20); // FUNCIONA
-
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
                             break;
                         }
                         case 2:{
-                            //tri_insertion(listaPrueba2) //FUNCIONA;
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
 
                             break;
                         }
                         case 3:{
-                            cout<<"entro";
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
                             break;
                         }
                         case 4:{
-                            //tri_gnome(listaPrueba2); //FUNCIONA
+                            tri_shaker(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();
                             break;
                         }case 5:{
-
-                            //tri_shell(l); //FUNCIONA
+                            tri_shell(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();//FUNCIONA
                             break;
                         }
-
-
+                        case 10:{
+                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();
+                            break;
+                        }
                         }
                         break;
                     }
                     }
-                    break;
+                break;
                 }
                 case 4: //Caso para la cola
                 {

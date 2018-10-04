@@ -1,6 +1,66 @@
+#ifndef LISTADOBLE_CPP
+#define LISTADOBLE_CPP
+
 #include "listadoble.h"
 #include <iostream>
+#include <sstream>
+#include <stdio.h>
+#include "claseextra.cpp"
 using namespace std;
+
+template  <class T>
+void listaDoble<T>::sustituirValor(int elemento,int pos){
+    NodoListaDoble* aux = primero;
+    NodoListaDoble* nodo;
+    int contador=0;
+    do{
+        if(contador == pos){
+            aux->elemento = elemento;
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=NULL);
+}
+template  <class T>
+void listaDoble<T>::sustituirValor(char elemento,int pos){
+    NodoListaDoble* aux = primero;
+    NodoListaDoble* nodo;
+    int contador=0;
+    do{
+        if(contador == pos){
+            aux->elemento = elemento;
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=NULL);
+}
+template  <class T>
+void listaDoble<T>::sustituirValor(string elemento,int pos){
+    NodoListaDoble* aux = primero;
+    NodoListaDoble* nodo;
+    int contador=0;
+    do{
+        if(contador == pos){
+            aux->elemento = elemento;
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=NULL);
+}
+
+template  <class T>
+void listaDoble<T>::sustituirValor(persona *elemento,int pos){
+    NodoListaDoble* aux = primero;
+    NodoListaDoble* nodo;
+    int contador=0;
+    do{
+        if(contador == pos){
+            aux->elemento = elemento;
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=NULL);
+}
 
 template <class T>
 int listaDoble<T>::cantDatos(){
@@ -126,3 +186,4 @@ T listaDoble<T>::getDato(int pos){
     return n->elemento;
 }
 
+#endif

@@ -31,7 +31,7 @@ listaDoble<char>* generarChars(int rango){
     listaDoble<char> *lista = new listaDoble<char>();
     for(int i = 0; i<rango; i++){
         //variable = limite_inferior + rand() % (limite_superior +1 - limite_inferior) ;
-        num = rand()% 97+25;
+        num = 97 + rand()% (123-97) ;
         letr = (char)num;
         if(letr != '}' && letr != '{' && letr != ']' && letr != '[')lista->insertarPos(letr,0);
         else i--;

@@ -1,6 +1,6 @@
 #ifndef LISTADOBLE_H
 #define LISTADOBLE_H
-
+#include "claseextra.cpp"
 #include <iostream>
 
 template <class T>
@@ -32,9 +32,14 @@ class listaDoble
         void insertarPos(T,int);
         bool ListaVacia() { return primero == NULL; }
         void mostrarLista();
+        void sustituirValor(int,int);
+        void sustituirValor(char,int);
+        void sustituirValor(string,int);
+        void sustituirValor(persona*,int);
         void cambio(int,int);
         bool menor(int,int);
         bool mayor(int,int);
+
 		T getDato(int); //Cambio David
         int cantDatos(); //Cambio David
 };

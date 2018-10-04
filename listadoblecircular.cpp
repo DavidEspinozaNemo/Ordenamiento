@@ -1,7 +1,68 @@
+#ifndef LISTADOBLECIRCULAR_CPP
+#define LISTADOBLECIRCULAR_CPP
+
 #include "listadoblecircular.h"
 #include <iostream>
+#include <sstream>
+#include <stdio.h>
+#include "claseextra.cpp"
 using namespace std;
 
+
+
+template  <class T>
+void listaDobleCircular<T>::sustituirValor(int elemento,int pos){
+    NodoListaDobleCircular* aux = primero;
+    NodoListaDobleCircular* nodo;
+    int contador=0;
+    do{
+        if(contador == pos){
+            aux->elemento = elemento;
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=primero);
+}
+template  <class T>
+void listaDobleCircular<T>::sustituirValor(char elemento,int pos){
+    NodoListaDobleCircular* aux = primero;
+    NodoListaDobleCircular* nodo;
+    int contador=0;
+    do{
+        if(contador == pos){
+            aux->elemento = elemento;
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=primero);
+}
+template  <class T>
+void listaDobleCircular<T>::sustituirValor(string elemento,int pos){
+    NodoListaDobleCircular* aux = primero;
+    NodoListaDobleCircular* nodo;
+    int contador=0;
+    do{
+        if(contador == pos){
+            aux->elemento = elemento;
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=primero);
+}
+
+template  <class T>
+void listaDobleCircular<T>::sustituirValor(persona *elemento,int pos){
+    NodoListaDobleCircular* aux = primero;
+    NodoListaDobleCircular* nodo;
+    int contador=0;
+    do{
+        if(contador == pos){
+            aux->elemento = elemento;
+        }
+        aux=aux->siguiente;
+        contador++;
+    }while(aux!=primero);
+}
 
 
 template <class T>
@@ -123,3 +184,4 @@ void listaDobleCircular<T>::mostrarLista(){
         n=n->siguiente;
     }while(n!=primero);
 }
+#endif

@@ -1,3 +1,5 @@
+#ifndef ALGORITMOS_CPP
+#define ALGORITMOS_CPP
 
 #include "claseextra.cpp"
 #include <stdio.h>
@@ -70,6 +72,7 @@ bool mayor(string inicio,string final){
 bool mayor(persona* inicio,persona* final){
     int primera1 = inicio->getCedula();
     int primera2 = final->getCedula();
+    cout<<primera1<<"entre"<<endl;
     int num1 = ("d%",primera1);
     int num2 = ("d%",primera2);
     if(num1>num2){
@@ -120,18 +123,40 @@ bool menor(persona* inicio,persona* final){
         return false;
     }
 }
+template <class T>
+void tri_shaker(T tableau,T temp) {
+    bool permutation;
+    int en_cours=0, sens=1;
+    int debut=1, fin=tableau->cantDatos();
+    do {
+        permutation=false;
+        while (((sens==1) && (en_cours<fin)) || ((sens==-1) && (en_cours>debut))) {
+            en_cours += sens;
+            if (menor(tableau->sacarDatos(en_cours),tableau->sacarDatos(en_cours-1))) {//tableau[en_cours]<tableau[en_cours-1]
+                temp->insertarPos(tableau->sacarDatos(en_cours),0);//int temp = tableau[en_cours];
+                tableau->cambio(en_cours,en_cours-1);//tableau[en_cours]=tableau[en_cours-1];
+                tableau->sustituirValor(temp->sacarDatos(0),en_cours-1);//tableau[en_cours-1]=temp;
+                permutation=true;
+            }
+        }
+        if (sens==1) fin--; else debut++;
+        sens = -sens;
+    } while (permutation);
+}
 
-
-
-void tri_insertion(int* t) //YOSUA BLANCO DIAZ
+template <class T>
+void tri_insertion(T t,T en_cours)
 {
-    std::cout<<"Tri insertion: ";
-    int en_cours, j;
-    for(int i = 1; i < 20; i++)
-    {
-        en_cours = t[i];
-        for(j = i; j > 0 && t[j-1] > en_cours;j--) t[j] = t[j-1];
-        t[j] = en_cours;
+    int i, j;
+    for (i = 1; i < (t->cantDatos()+1); i++) {
+        en_cours->insertarPos(t->sacarDatos(i),0);
+        //cout<<"En curso:"<<en_cours->sacarDatos(0)<<endl;
+        for (j = i; j > 0 && mayor(t->sacarDatos(j-1),en_cours->sacarDatos(0)) ; j--) {
+                //cout<<"entro al for"<<endl;
+                t->cambio(j,j-1);
+        }
+        t->sustituirValor(en_cours->sacarDatos(0),j);
+        //t->insertarPos(en_cours->sacarDatos(0),j);
     }
 }
 
@@ -187,26 +212,24 @@ void tri_selection(T tableau, int taille) // YOSUA BLANCO DIAZ
 
      }
 }
-
 template <class T>
-void tri_insertion(T t, int gap, int debut) // PARTE DEL SHELL  // YOSUA BLANCO DIAZ
+void tri_insertion(T t,T en_cours, int gap, int debut)
 {
     int j;
     for (int i = gap + debut; i < t->cantDatos()+1; i+=gap) {
-        //en_cours = t[i];
-        for (j = i; j >= gap && mayor(t->sacarDatos(j-gap),t->sacarDatos(i)); j-=gap) {//t[j - gap] > en_cours
+        en_cours->insertarPos(t->sacarDatos(i),0);
+        for (j = i; j >= gap && mayor(t->sacarDatos(j-gap),en_cours->sacarDatos(0)) ; j-=gap) { //t[j - gap] > en_cours
             t->cambio(j,j-gap);//t[j] = t[j - gap];
         }
-        t->cambio(i,j);//t[j] = en_cours;
+        t->sustituirValor(en_cours->sacarDatos(0),j);//t[j] = en_cours;
     }
 }
 template <class T>
-void tri_shell(T t) {  // YOSUA BLANCO DIAZ
-    std::cout<<"Tri Shell: ";
+void tri_shell(T t,T en_cours) {
     int intervalles[5]={6,4,3,2,1};
     for (int ngap=0;ngap<5;ngap++) {
         for (int i=0;i<intervalles[ngap];i++)
-            tri_insertion(t,intervalles[ngap],i);
+            tri_insertion(t,en_cours,intervalles[ngap],i);
     }
 }
 
@@ -502,3 +525,5 @@ void printArray(T arr[], int n)
         std::cout << arr[i] << " ";
     std::cout << "\n";
 }
+
+#endif

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <cstdlib>
+#include <claseextra.cpp>
 
 using namespace std;
 
@@ -33,13 +34,17 @@ class listaSimple
         void insertarPos(T elemento,int);
         void cambio(int,int);
         bool menor(int,int);
-
+        void sustituirValor(int,int);
+        void sustituirValor(char,int);
+        void sustituirValor(string,int);
+        void sustituirValor(persona*,int);
         bool mayor(int,int);//(indice inicial,indice fianl,si es string, si es obj)
         bool mayor(char,char);
         bool mayor(string,string);
 
         //bool mayor(persona,persona);
         T sacarDatos(int);
+
         int cantDatos();
         bool ListaVacia() { return primero == NULL; }
 
