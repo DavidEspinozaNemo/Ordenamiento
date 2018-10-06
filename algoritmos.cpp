@@ -177,7 +177,9 @@ void tri_bulle(T tableau)  //YOSUA BLANCO DIAZ // LISTO CON :INT,CHAR
             if(mayor(tableau->sacarDatos(en_cours),tableau->sacarDatos(en_cours+1)))
             {
                 permutation = true;
+                //cout<<en_cours+1;
                 tableau->cambio(en_cours,en_cours+1);
+
             }
         }
     }

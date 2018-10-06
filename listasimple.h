@@ -10,21 +10,22 @@ using namespace std;
 template <class T>
 class listaSimple
 {
-    class NodoListaSimple
+    class NodoListaDoble
     {
     public:
-        NodoListaSimple* siguiente;
+        NodoListaDoble* siguiente;
+        NodoListaDoble* atras;
         T elemento;
 
-        NodoListaSimple(T x)
+        NodoListaDoble(T x)
         {
         elemento = x;
         siguiente = NULL;
-
+        atras = NULL;
 
         }
     };
-    NodoListaSimple* primero;
+    NodoListaDoble* primero;
     public:
         listaSimple ()
         {
