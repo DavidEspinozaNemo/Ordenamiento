@@ -156,9 +156,9 @@ void tri_insertion(T t,T en_cours)
         en_cours->insertarPos(t->sacarDatos(i),0);
         //cout<<"En curso:"<<en_cours->sacarDatos(0)<<endl;
         for (j = i; j > 0 && mayor(t->sacarDatos(j-1),en_cours->sacarDatos(0)) ; j--) {
-                //cout<<"entro a cambio con :"<<j<<" y "<<j-1 <<endl;
+            //cout<<"entro a cambio con :"<<j<<" y "<<j-1 <<endl;
 
-                t->cambio(j-1,j);
+            t->cambio(j-1,j);
         }
         t->sustituirValor(en_cours->sacarDatos(0),j);
         //t->insertarPos(en_cours->sacarDatos(0),j);

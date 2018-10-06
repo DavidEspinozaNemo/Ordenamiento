@@ -506,4 +506,15 @@ T listaDoble<T>::getDato(int pos){
     return n->elemento;
 }
 
+template <>
+void listaDoble<persona*>::mostrarLista(){
+    cout<<"Lista Doble: \n";
+    NodoListaDoble* n;
+    n = primero;
+    do{
+        cout << n->elemento->getNombre() << " : " << n->elemento->getCedula() <<" : "<< n->elemento->getEdad()<<endl;
+        n=n->siguiente;
+    }while(n!=NULL);
+}
+
 #endif

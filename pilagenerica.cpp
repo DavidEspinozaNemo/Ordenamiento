@@ -58,4 +58,18 @@ void PilaGenerica<T>::mostrarPila(){
         cout<<n->elemento<<endl;
     }
 }
+
+/*
+template <>
+void PilaGenerica<persona*>::mostrarPila(){
+    cout<<"PILA: \n";
+    NodoPila* n;
+    while(!pilaVacia())
+    {
+        n = cima;
+        cima = cima->siguiente;
+        cout << n->elemento->getNombre() << " : " << n->elemento->getCedula() <<" : "<< n->elemento->getEdad()<<endl;
+    }
+}*/
+
 #endif

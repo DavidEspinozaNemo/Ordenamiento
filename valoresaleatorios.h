@@ -10,45 +10,79 @@
 
 using namespace std;
 
+template <class T>
+void crearNombresAleatorios(T est);
 
 //Generar una lista de numeros aleatorios.
-listaDoble<int>* generarNumeros(int rango){
+template <class T>
+void generarNumeros(T est, int rango){
     int num;
     srand(time(NULL));
-    listaDoble<int> *lista = new listaDoble<int>();
+    //listaDoble<int> *lista = new listaDoble<int>();
     for(int i = 0; i<rango; i++){
         //variable = limite_inferior + rand() % (limite_superior +1 - limite_inferior) ;
         num = 1 + rand()%1000000;
-        lista->insertarPos(num,0);
+        est->insertar(num);
     }
-    return lista;
 }
 //Generar una lista de letras aleatorias.
-listaDoble<char>* generarChars(int rango){
+template <class T>
+void generarChars(T est, int rango){
     int num;
     char letr;
     srand(time(NULL));
-    listaDoble<char> *lista = new listaDoble<char>();
     for(int i = 0; i<rango; i++){
         //variable = limite_inferior + rand() % (limite_superior +1 - limite_inferior) ;
         num = 97 + rand()% (123-97) ;
         letr = (char)num;
-        if(letr != '}' && letr != '{' && letr != ']' && letr != '[')lista->insertarPos(letr,0);
+        if(letr != '}' && letr != '{' && letr != ']' && letr != '[') est->insertar(letr);
         else i--;
     }
-    return lista;
 }
 
 //Generar una lista de palabras aleatorias.
-listaDoble<string>* generarPalabras(int rango){
+template <class T>
+void generarPalabras(T est, int rango){
     listaDoble<string> *biblioteca = leerPalabras();
     int rangoDeBibliot =biblioteca->cantDatos(), num;
-    listaDoble<string> *lista = new listaDoble<string>();
     for(int i = 0; i<rango; i++){
         num = rand()%(rangoDeBibliot-1);
-        lista->insertarPos(biblioteca->getDato(num),0);
+        est->insertar(biblioteca->getDato(num));
     }
-    return lista;
+}
+
+//Generar un lista de objetos Personas aleatorias
+template <class T>
+void generarPersonas(T est, int rango){
+    listaDoble<string> *NombreAleatorios = new listaDoble<string>();
+    crearNombresAleatorios(NombreAleatorios);
+    int rangoEdad, rangoCedula, rangoNombre;
+    for(int i = 0; i<rango; i++){
+        rangoEdad = 15 + rand()%(85);
+        rangoCedula = 1000000 + rand()%(100000);
+        rangoNombre = rand()%(NombreAleatorios->cantDatos()-1);
+        est->insertar(new persona(NombreAleatorios->getDato(rangoNombre),rangoEdad,rangoCedula));
+    }
+}
+
+//Defino nombres aleatorios
+template <class T>
+void crearNombresAleatorios(T est){
+    est->insertar("Sebastian");
+    est->insertar("Rodrigo");
+    est->insertar("David");
+    est->insertar("Ismael");
+    est->insertar("Maria");
+    est->insertar("Fabiana");
+    est->insertar("Fabian");
+    est->insertar("Martinez");
+    est->insertar("Alexander");
+    est->insertar("Felipe");
+    est->insertar("Juana");
+    est->insertar("Rose");
+    est->insertar("Emilia");
+    est->insertar("Esperanza");
+    est->insertar("Toto");
 }
 
 #endif // VALORESALEATORIOS_H

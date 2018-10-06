@@ -77,4 +77,15 @@ void cola<T>::mostrarCola(cola<T>& q)
     }
     std::cout << std::endl;
 }
+
+template <>
+void cola<persona*>::mostrarCola(cola<persona*>& q){
+    cout<<"COLA: \n";
+    while (! q.colaVacia())
+    {
+        persona *v;
+        v = q.quitar();
+        cout << v->getNombre() << " : " << v->getCedula() <<" : "<< v->getEdad()<<endl;
+    }
+}
 #endif

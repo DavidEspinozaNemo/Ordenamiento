@@ -493,4 +493,15 @@ void listaSimple<T>::mostrarLista(){
     }while(n!=NULL);
 }
 
+template <>
+void listaSimple<persona*>::mostrarLista(){
+    cout<<"Lista Simple: \n";
+    NodoListaDoble* n;
+    n = primero;
+    do{
+        cout << n->elemento->getNombre() << " : " << n->elemento->getCedula() <<" : "<< n->elemento->getEdad()<<endl;
+        n=n->siguiente;
+    }while(n!=NULL);
+}
+
 #endif

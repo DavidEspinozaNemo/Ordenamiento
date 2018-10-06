@@ -21,7 +21,9 @@ class persona
             this->edad=eda;
             this->cedula=ced;
         }
-        int getCedula();
+        string getNombre(){ return nombre; }
+        int getCedula(){ return cedula;}
+        int getEdad(){ return edad;}
 
 };
 

@@ -6,6 +6,7 @@
 #include "listasimple.cpp"
 #include "algoritmos.cpp"
 #include "valoresaleatorios.h"
+#include <iostream>
 
 
 int main(int argc, char *argv[])
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
             cout << "Para salir inserte -1.";
             do{
                 cout << "-"
-                        "*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n";
+                           "*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n";
                 cout << "Que estructura quiere utilizar?\n";
                 cout << "Para lista simple digite --------- 1.\n";
                 cout << "Para lista doble digite ---------- 2.\n";
@@ -92,13 +93,8 @@ int main(int argc, char *argv[])
                     case 1: //numeros
                     {
                         listaSimple<int>* listaPrueba2 = new listaSimple<int>();
+                        generarNumeros(listaPrueba2,guardaCantidad);
                         listaSimple<int>* listaAux = new listaSimple<int>();
-                        listaDoble<int> *aux = new listaDoble<int>();
-                        aux = generarNumeros(guardaCantidad);
-                        for(int x=0;x<guardaCantidad;x++){
-                            listaPrueba2->insertar(aux->getDato(x));
-                        }
-                        delete(aux);
 
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
@@ -106,41 +102,40 @@ int main(int argc, char *argv[])
                             clock_t start = clock();
                             tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
                             listaPrueba2->mostrarLista();
-                            printf("Tiempo transcurrido: %f", ((double)clock() - start));
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 2:{
                             clock_t start = clock();
                             tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
                             listaPrueba2->mostrarLista();
-                            printf("Tiempo transcurrido: %f", ((double)clock() - start));
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+
                             break;
                         }
                         case 3:{
                             clock_t start = clock();
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
-                            printf("Tiempo transcurrido: %f", ((double)clock() - start));
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 4:{
                             clock_t start = clock();
                             tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
-                            printf("Tiempo transcurrido: %f", ((double)clock() - start));
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }case 5:{
                             clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
-                            printf("Tiempo transcurrido: %f", ((double)clock() - start));
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 10:{
-                            clock_t start = clock();
                             quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
-                            printf("Tiempo transcurrido: %f", ((double)clock() - start));
                             break;
                         }
                         } //->Para los algoritmos
@@ -150,13 +145,8 @@ int main(int argc, char *argv[])
                     case 2: //chars
                     {
                         listaSimple<char>* listaPrueba2 = new listaSimple<char>();
-                        listaDoble<char> *aux = new listaDoble<char>();
+                        generarChars(listaPrueba2, guardaCantidad);
                         listaSimple<char>* listaAux = new listaSimple<char>();
-                        aux = generarChars(guardaCantidad);
-                        for(int x=0;x<guardaCantidad;x++){
-                            listaPrueba2->insertar(aux->getDato(x));
-                        }
-                        delete(aux);
 
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
@@ -196,13 +186,8 @@ int main(int argc, char *argv[])
                     case 3: //string
                     {
                         listaSimple<string>* listaPrueba2 = new listaSimple<string>();
-                        listaDoble<string> *aux = new listaDoble<string>();
+                        generarPalabras(listaPrueba2, guardaCantidad);
                         listaSimple<string>* listaAux = new listaSimple<string>();
-                        aux = generarPalabras(guardaCantidad);
-                        for(int x=0;x<guardaCantidad;x++){
-                            listaPrueba2->insertar(aux->getDato(x));
-                        }
-                        delete(aux);
 
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
@@ -243,11 +228,9 @@ int main(int argc, char *argv[])
                     {
                         listaSimple<persona*>* listaPrueba2 = new listaSimple<persona*>();
                         listaSimple<persona*>* listaAux = new listaSimple<persona*>();
-                        persona* persona1 = new persona("yosua",21,116830903);
-                        for(int x=0;x<guardaCantidad;x++){
-                            listaPrueba2->insertar(persona1);
-                        }
+                        generarPersonas(listaPrueba2, guardaCantidad);
                         listaPrueba2->mostrarLista();
+
                         switch (guardaOr) {
                         case 1:{
                             tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
@@ -291,13 +274,8 @@ int main(int argc, char *argv[])
                     case 1: //numeros
                     {
                         listaDoble<int>* listaPrueba2 = new listaDoble<int>();
-                        listaDoble<int> *aux = new listaDoble<int>();
+                        generarNumeros(listaPrueba2,guardaCantidad);
                         listaDoble<int> *listaAux = new listaDoble<int>();
-                        aux = generarNumeros(guardaCantidad);
-                        for(int x=0;x<guardaCantidad;x++){
-                            listaPrueba2->insertar(aux->getDato(x));
-                        }
-                        delete(aux);
 
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
@@ -337,13 +315,8 @@ int main(int argc, char *argv[])
                     case 2: //chars
                     {
                         listaDoble<char>* listaPrueba2 = new listaDoble<char>();
-                        listaDoble<char> *aux = new listaDoble<char>();
+                        generarChars(listaPrueba2, guardaCantidad);
                         listaDoble<char> *listaAux = new listaDoble<char>();
-                        aux = generarChars(guardaCantidad);
-                        for(int x=0;x<guardaCantidad;x++){
-                            listaPrueba2->insertar(aux->getDato(x));
-                        }
-                        delete(aux);
 
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
@@ -383,13 +356,8 @@ int main(int argc, char *argv[])
                     case 3: //strings
                     {
                         listaDoble<string>* listaPrueba2 = new listaDoble<string>();
-                        listaDoble<string> *aux = new listaDoble<string>();
+                        generarPalabras(listaPrueba2, guardaCantidad);
                         listaDoble<string> *listaAux = new listaDoble<string>();
-                        aux = generarPalabras(guardaCantidad);
-                        for(int x=0;x<guardaCantidad;x++){
-                            listaPrueba2->insertar(aux->getDato(x));
-                        }
-                        delete(aux);
 
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
@@ -430,10 +398,7 @@ int main(int argc, char *argv[])
                     {
                         listaDoble<persona*>* listaPrueba2 = new listaDoble<persona*>();
                         listaDoble<persona*>* listaAux = new listaDoble<persona*>();
-                        persona* persona1 = new persona("yosua",21,116830903);
-                        for(int x=0;x<guardaCantidad;x++){
-                            listaPrueba2->insertar(persona1);
-                        }
+                        generarPersonas(listaPrueba2, guardaCantidad);
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
@@ -478,13 +443,8 @@ int main(int argc, char *argv[])
                     case 1: //numeros
                     {
                         listaDobleCircular<int>* listaPrueba2 = new listaDobleCircular<int>();
-                        listaDoble<int> *aux = new listaDoble<int>();
+                        generarNumeros(listaPrueba2,guardaCantidad);
                         listaDobleCircular<int>* listaAux = new listaDobleCircular<int>();
-                        aux = generarNumeros(guardaCantidad);
-                        for(int x=0;x<guardaCantidad;x++){
-                            listaPrueba2->insertar(aux->getDato(x));
-                        }
-                        delete(aux);
 
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
@@ -524,13 +484,8 @@ int main(int argc, char *argv[])
                     case 2: //chars
                     {
                         listaDobleCircular<char>* listaPrueba2 = new listaDobleCircular<char>();
-                        listaDoble<char> *aux = new listaDoble<char>();
+                        generarChars(listaPrueba2, guardaCantidad);
                         listaDobleCircular<char>* listaAux = new listaDobleCircular<char>();
-                        aux = generarChars(guardaCantidad);
-                        for(int x=0;x<guardaCantidad;x++){
-                            listaPrueba2->insertar(aux->getDato(x));
-                        }
-                        delete(aux);
 
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
@@ -570,13 +525,8 @@ int main(int argc, char *argv[])
                     case 3: //strings
                     {
                         listaDobleCircular<string>* listaPrueba2 = new listaDobleCircular<string>();
-                        listaDoble<string> *aux = new listaDoble<string>();
+                        generarPalabras(listaPrueba2, guardaCantidad);
                         listaDobleCircular<string>* listaAux = new listaDobleCircular<string>();
-                        aux = generarPalabras(guardaCantidad);
-                        for(int x=0;x<guardaCantidad;x++){
-                            listaPrueba2->insertar(aux->getDato(x));
-                        }
-                        delete(aux);
 
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
@@ -616,11 +566,8 @@ int main(int argc, char *argv[])
                     case 4: //objetos
                     {
                         listaDobleCircular<persona*>* listaPrueba2 = new listaDobleCircular<persona*>();
-                        persona* persona1 = new persona("yosua",21,116830903);
                         listaDobleCircular<persona*>* listaAux = new listaDobleCircular<persona*>();
-                        for(int x=0;x<guardaCantidad;x++){
-                            listaPrueba2->insertar(persona1);
-                        }
+                        generarPersonas(listaPrueba2, guardaCantidad);
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
@@ -666,15 +613,7 @@ int main(int argc, char *argv[])
                     case 1: //Numeros
                     {
                         cola<int>* colaPrueba2 = new cola<int>();
-                        listaDoble<int> *listaPrueba2 = new listaDoble<int>();
-
-                        listaPrueba2 = generarNumeros(guardaCantidad);
-
-
-                        for(int x=0;x<guardaCantidad;x++){
-                            colaPrueba2->insertar(listaPrueba2->getDato(x));
-                        }
-
+                        generarNumeros(colaPrueba2,guardaCantidad);
 
                         colaPrueba2->mostrarCola(*colaPrueba2);
 
@@ -685,12 +624,7 @@ int main(int argc, char *argv[])
                     case 2: //chars
                     {
                         cola<char>* colaPrueba2 = new cola<char>();
-                        listaDoble<char> *aux = new listaDoble<char>();
-                        aux = generarChars(guardaCantidad);
-                        for(int x=0;x<guardaCantidad;x++){
-                            colaPrueba2->insertar(aux->getDato(x));
-                        }
-                        delete(aux);
+                        generarChars(colaPrueba2, guardaCantidad);
 
                         colaPrueba2->mostrarCola(*colaPrueba2);
                         //Swich(opcionOb) ->Para los algoritmos
@@ -699,12 +633,7 @@ int main(int argc, char *argv[])
                     case 3: //String
                     {
                         cola<string>* colaPrueba2 = new cola<string>();
-                        listaDoble<string> *aux = new listaDoble<string>();
-                        aux = generarPalabras(guardaCantidad);
-                        for(int x=0;x<guardaCantidad;x++){
-                            colaPrueba2->insertar(aux->getDato(x));
-                        }
-                        delete(aux);
+                        generarPalabras(colaPrueba2, guardaCantidad);
 
                         colaPrueba2->mostrarCola(*colaPrueba2);
                         //Swich(opcionOb) ->Para los algoritmos
@@ -713,10 +642,7 @@ int main(int argc, char *argv[])
                     case 4: //objetos
                     {
                         cola<persona*>* colaPrueba2 = new cola<persona*>();
-                        persona* persona1 = new persona("yosua",21,116830903);
-                        for(int x=0;x<guardaCantidad;x++){
-                            colaPrueba2->insertar(persona1);
-                        }
+                        generarPersonas(colaPrueba2, guardaCantidad);
                         colaPrueba2->mostrarCola(*colaPrueba2);
 
                         //Swich(opcionOb) ->Para los algoritmos
@@ -731,12 +657,7 @@ int main(int argc, char *argv[])
                     case 1: //numeros
                     {
                         PilaGenerica<int>* pilaPrueba2 = new PilaGenerica<int>();
-                        listaDoble<int> *aux = new listaDoble<int>();
-                        aux = generarNumeros(guardaCantidad);
-                        for(int x=0;x<guardaCantidad;x++){
-                            pilaPrueba2->insertar(aux->getDato(x));
-                        }
-                        delete(aux);
+                        generarNumeros(pilaPrueba2,guardaCantidad);
 
                         pilaPrueba2->mostrarPila();
                         //Swich(opcionOb) ->Para los algoritmos
@@ -745,12 +666,7 @@ int main(int argc, char *argv[])
                     case 2: //chars
                     {
                         PilaGenerica<char>* pilaPrueba2 = new PilaGenerica<char>();
-                        listaDoble<char> *aux = new listaDoble<char>();
-                        aux = generarChars(guardaCantidad);
-                        for(int x=0;x<guardaCantidad;x++){
-                            pilaPrueba2->insertar(aux->getDato(x));
-                        }
-                        delete(aux);
+                        generarChars(pilaPrueba2, guardaCantidad);
 
                         pilaPrueba2->mostrarPila();
                         //Swich(opcionOb) ->Para los algoritmos
@@ -759,12 +675,7 @@ int main(int argc, char *argv[])
                     case 3: //String
                     {
                         PilaGenerica<string>* pilaPrueba2 = new PilaGenerica<string>();
-                        listaDoble<string> *aux = new listaDoble<string>();
-                        aux = generarPalabras(guardaCantidad);
-                        for(int x=0;x<guardaCantidad;x++){
-                            pilaPrueba2->insertar(aux->getDato(x));
-                        }
-                        delete(aux);
+                        generarPalabras(pilaPrueba2, guardaCantidad);
 
                         pilaPrueba2->mostrarPila();
                         //Swich(opcionOb) ->Para los algoritmos
@@ -773,10 +684,7 @@ int main(int argc, char *argv[])
                     case 4: //objetos
                     {
                         PilaGenerica<persona*>* pilaPrueba2 = new PilaGenerica<persona*>();
-                        persona* persona1 = new persona("yosua",21,116830903);
-                        for(int x=0;x<guardaCantidad;x++){
-                            pilaPrueba2->insertar(persona1);
-                        }
+                        generarPersonas(pilaPrueba2, guardaCantidad);
                         pilaPrueba2->mostrarPila();
 
                         //Swich(opcionOb) ->Para los algoritmos
