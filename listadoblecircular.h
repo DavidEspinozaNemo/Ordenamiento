@@ -10,14 +10,14 @@ using namespace std;
 template <class T>
 class listaDobleCircular
 {
-    class NodoListaDobleCircular
+    class NodoListaDoble
     {
     public:
-        NodoListaDobleCircular* siguiente;
-        NodoListaDobleCircular* atras;
+        NodoListaDoble* siguiente;
+        NodoListaDoble* atras;
         T elemento;
 
-        NodoListaDobleCircular(T x)
+        NodoListaDoble(T x)
         {
         elemento = x;
         siguiente = NULL;
@@ -25,7 +25,8 @@ class listaDobleCircular
 
         }
     };
-    NodoListaDobleCircular* primero;
+    NodoListaDoble* primero;
+
     public:
         listaDobleCircular ()
         {

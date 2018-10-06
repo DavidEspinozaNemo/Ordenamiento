@@ -10,6 +10,7 @@
 #include <string>
 #include <fstream>
 //#include "listasimple.h"
+#include <time.h>
 
 using namespace std;
 
@@ -125,6 +126,7 @@ bool menor(persona* inicio,persona* final){
 }
 template <class T>
 void tri_shaker(T tableau,T temp) {
+
     bool permutation;
     int en_cours=0, sens=1;
     int debut=1, fin=tableau->cantDatos();
@@ -134,14 +136,16 @@ void tri_shaker(T tableau,T temp) {
             en_cours += sens;
             if (menor(tableau->sacarDatos(en_cours),tableau->sacarDatos(en_cours-1))) {//tableau[en_cours]<tableau[en_cours-1]
                 temp->insertarPos(tableau->sacarDatos(en_cours),0);//int temp = tableau[en_cours];
-                tableau->cambio(en_cours,en_cours-1);//tableau[en_cours]=tableau[en_cours-1];
+                tableau->cambio(en_cours-1,en_cours);//tableau[en_cours]=tableau[en_cours-1];
                 tableau->sustituirValor(temp->sacarDatos(0),en_cours-1);//tableau[en_cours-1]=temp;
                 permutation=true;
+                cout<<".";
             }
         }
         if (sens==1) fin--; else debut++;
         sens = -sens;
     } while (permutation);
+
 }
 
 template <class T>
@@ -152,8 +156,9 @@ void tri_insertion(T t,T en_cours)
         en_cours->insertarPos(t->sacarDatos(i),0);
         //cout<<"En curso:"<<en_cours->sacarDatos(0)<<endl;
         for (j = i; j > 0 && mayor(t->sacarDatos(j-1),en_cours->sacarDatos(0)) ; j--) {
-                //cout<<"entro al for"<<endl;
-                t->cambio(j,j-1);
+                //cout<<"entro a cambio con :"<<j<<" y "<<j-1 <<endl;
+
+                t->cambio(j-1,j);
         }
         t->sustituirValor(en_cours->sacarDatos(0),j);
         //t->insertarPos(en_cours->sacarDatos(0),j);
@@ -221,7 +226,7 @@ void tri_insertion(T t,T en_cours, int gap, int debut)
     for (int i = gap + debut; i < t->cantDatos()+1; i+=gap) {
         en_cours->insertarPos(t->sacarDatos(i),0);
         for (j = i; j >= gap && mayor(t->sacarDatos(j-gap),en_cours->sacarDatos(0)) ; j-=gap) { //t[j - gap] > en_cours
-            t->cambio(j,j-gap);//t[j] = t[j - gap];
+            t->cambio(j-gap,j);//t[j] = t[j - gap];
         }
         t->sustituirValor(en_cours->sacarDatos(0),j);//t[j] = en_cours;
     }

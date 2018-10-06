@@ -17,7 +17,8 @@ int main(int argc, char *argv[])
             int guardaEs=0,guardaOb=0,guardaOr=0,guardaCantidad=0;
             cout << "Para salir inserte -1.";
             do{
-                cout << "-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n";
+                cout << "-"
+                        "*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n";
                 cout << "Que estructura quiere utilizar?\n";
                 cout << "Para lista simple digite --------- 1.\n";
                 cout << "Para lista doble digite ---------- 2.\n";
@@ -102,33 +103,44 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
+                            clock_t start = clock();
                             tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
                             listaPrueba2->mostrarLista();
+                            printf("Tiempo transcurrido: %f", ((double)clock() - start));
                             break;
                         }
                         case 2:{
+                            clock_t start = clock();
                             tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
                             listaPrueba2->mostrarLista();
-
+                            printf("Tiempo transcurrido: %f", ((double)clock() - start));
                             break;
                         }
                         case 3:{
+                            clock_t start = clock();
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
+                            printf("Tiempo transcurrido: %f", ((double)clock() - start));
                             break;
                         }
                         case 4:{
+                            clock_t start = clock();
                             tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
+                            printf("Tiempo transcurrido: %f", ((double)clock() - start));
                             break;
                         }case 5:{
+                            clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            printf("Tiempo transcurrido: %f", ((double)clock() - start));
                             break;
                         }
                         case 10:{
+                            clock_t start = clock();
                             quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
+                            printf("Tiempo transcurrido: %f", ((double)clock() - start));
                             break;
                         }
                         } //->Para los algoritmos
