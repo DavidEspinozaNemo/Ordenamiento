@@ -134,8 +134,10 @@ int main(int argc, char *argv[])
                             break;
                         }
                         case 10:{
+                            clock_t start = clock();
                             quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         } //->Para los algoritmos
@@ -151,33 +153,44 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
+                            clock_t start = clock();
                             tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 2:{
+                            clock_t start = clock();
                             tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
                             listaPrueba2->mostrarLista();
-
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 3:{
+                            clock_t start = clock();
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 4:{
+                            clock_t start = clock();
                             tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }case 5:{
+                            clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 10:{
+                            clock_t start = clock();
                             quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         }
@@ -192,33 +205,44 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
+                            clock_t start = clock();
                             tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 2:{
+                            clock_t start = clock();
                             tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
                             listaPrueba2->mostrarLista();
-
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 3:{
+                            clock_t start = clock();
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 4:{
+                            clock_t start = clock();
                             tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }case 5:{
+                            clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 10:{
+                            clock_t start = clock();
                             quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         }
@@ -233,33 +257,44 @@ int main(int argc, char *argv[])
 
                         switch (guardaOr) {
                         case 1:{
+                            clock_t start = clock();
                             tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 2:{
+                            clock_t start = clock();
                             tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
                             listaPrueba2->mostrarLista();
-
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 3:{
+                            clock_t start = clock();
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 4:{
+                            clock_t start = clock();
                             tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }case 5:{
+                            clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 10:{
+                            clock_t start = clock();
                             quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         }
@@ -280,33 +315,44 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
+                            clock_t start = clock();
                             tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 2:{
+                            clock_t start = clock();
                             tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
                             listaPrueba2->mostrarLista();
-
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 3:{
+                            clock_t start = clock();
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 4:{
+                            clock_t start = clock();
                             tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }case 5:{
+                            clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 10:{
+                            clock_t start = clock();
                             quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         }
@@ -321,33 +367,44 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
+                            clock_t start = clock();
                             tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 2:{
+                            clock_t start = clock();
                             tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
                             listaPrueba2->mostrarLista();
-
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 3:{
+                            clock_t start = clock();
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 4:{
+                            clock_t start = clock();
                             tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }case 5:{
+                            clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 10:{
+                            clock_t start = clock();
                             quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         }
@@ -362,33 +419,44 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
+                            clock_t start = clock();
                             tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 2:{
+                            clock_t start = clock();
                             tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
                             listaPrueba2->mostrarLista();
-
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 3:{
+                            clock_t start = clock();
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 4:{
+                            clock_t start = clock();
                             tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }case 5:{
+                            clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 10:{
+                            clock_t start = clock();
                             quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         }
@@ -402,33 +470,44 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
+                            clock_t start = clock();
                             tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 2:{
+                            clock_t start = clock();
                             tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
                             listaPrueba2->mostrarLista();
-
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 3:{
+                            clock_t start = clock();
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 4:{
+                            clock_t start = clock();
                             tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }case 5:{
+                            clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 10:{
+                            clock_t start = clock();
                             quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         }
@@ -449,33 +528,44 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
+                            clock_t start = clock();
                             tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 2:{
+                            clock_t start = clock();
                             tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
                             listaPrueba2->mostrarLista();
-
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 3:{
+                            clock_t start = clock();
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 4:{
+                            clock_t start = clock();
                             tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }case 5:{
+                            clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 10:{
+                            clock_t start = clock();
                             quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         }
@@ -490,33 +580,44 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
+                            clock_t start = clock();
                             tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 2:{
+                            clock_t start = clock();
                             tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
                             listaPrueba2->mostrarLista();
-
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 3:{
+                            clock_t start = clock();
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 4:{
+                            clock_t start = clock();
                             tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }case 5:{
+                            clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 10:{
+                            clock_t start = clock();
                             quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         }
@@ -531,33 +632,44 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
+                            clock_t start = clock();
                             tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 2:{
+                            clock_t start = clock();
                             tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
                             listaPrueba2->mostrarLista();
-
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 3:{
+                            clock_t start = clock();
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 4:{
+                            clock_t start = clock();
                             tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }case 5:{
+                            clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 10:{
+                            clock_t start = clock();
                             quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         }
@@ -571,33 +683,44 @@ int main(int argc, char *argv[])
                         listaPrueba2->mostrarLista();
                         switch (guardaOr) {
                         case 1:{
+                            clock_t start = clock();
                             tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 2:{
+                            clock_t start = clock();
                             tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
                             listaPrueba2->mostrarLista();
-
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 3:{
+                            clock_t start = clock();
                             tri_bulle(listaPrueba2);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 4:{
+                            clock_t start = clock();
                             tri_shaker(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }case 5:{
+                            clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         case 10:{
+                            clock_t start = clock();
                             quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
                         }
