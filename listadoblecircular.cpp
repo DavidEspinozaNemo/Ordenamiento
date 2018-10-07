@@ -12,16 +12,53 @@ using namespace std;
 
 template  <class T>
 void listaDobleCircular<T>::sustituirValor(int elemento,int pos){
+
     NodoListaDoble* aux = primero;
     NodoListaDoble* nodo;
+    NodoListaDoble* nuevo = new NodoListaDoble(elemento);
+    NodoListaDoble* aux1;
+    NodoListaDoble* aux2;
+    NodoListaDoble* ultimo;
     int contador=0;
     do{
         if(contador == pos){
-            aux->elemento = elemento;
+            nodo=aux;
+
+        }else if(contador == pos+1 && pos!=cantDatos()){
+            aux2=aux;
+
+        }else if(contador == pos-1 && pos!=0){
+            aux1=aux;
+
+        }else if(contador == cantDatos()){
+            ultimo=aux;
         }
         aux=aux->siguiente;
         contador++;
     }while(aux!=primero);
+    if(pos==0){
+        nuevo->siguiente=aux2;
+        aux2->atras=nuevo;
+        delete(nodo);
+        primero=nuevo;
+        ultimo->siguiente=nuevo;
+        nuevo->atras=ultimo;
+    }else if(pos==cantDatos()){
+        aux1->siguiente=nuevo;
+        nuevo->atras=aux1;
+        delete(nodo);
+        ultimo=nuevo;
+        ultimo->siguiente=primero;
+        primero->atras=ultimo;
+    }else{
+        nuevo->siguiente=aux2;
+        aux2->atras=nuevo;
+        aux1->siguiente=nuevo;
+        nuevo->atras=aux1;
+        delete(nodo);
+    }
+    //cout<<"hhh";
+
 }
 template  <class T>
 void listaDobleCircular<T>::sustituirValor(char elemento,int pos){
@@ -35,6 +72,7 @@ void listaDobleCircular<T>::sustituirValor(char elemento,int pos){
         aux=aux->siguiente;
         contador++;
     }while(aux!=primero);
+
 }
 template  <class T>
 void listaDobleCircular<T>::sustituirValor(string elemento,int pos){
@@ -79,6 +117,7 @@ int listaDobleCircular<T>::cantDatos(){
 
 template <class T>
 T listaDobleCircular<T>::sacarDatos(int indice){
+    //cout<<"error";
     NodoListaDoble* aux = primero;
     NodoListaDoble* nodo;
     int contador=0;
@@ -89,13 +128,14 @@ T listaDobleCircular<T>::sacarDatos(int indice){
         aux=aux->siguiente;
         contador++;
     }while(aux!=primero);
+    //cout<<"error";
     return nodo->elemento;
 }
 
 
 template <class T>
 void listaDobleCircular<T>::cambio(int inicio,int final){
-    //cout<<"cambio"<<endl;
+
     T dato1;
     NodoListaDoble* nodo_inicio;
     NodoListaDoble* aux = primero;
@@ -126,9 +166,11 @@ void listaDobleCircular<T>::cambio(int inicio,int final){
                 }else if(contador == final-1 && casoEspecial!=1 && casoEspecial!=2){
                     aux3=aux;
 
-                }else if(contador == final+1){
+                }else if(contador == final+1 && final+1!=cantDatos()){
                     aux4=aux;
 
+                }else if(contador == cantDatos()){
+                    ultimo=aux;
                 }
                 aux=aux->siguiente;
                 contador++;
@@ -137,9 +179,9 @@ void listaDobleCircular<T>::cambio(int inicio,int final){
 
             if(nodo_final!=NULL && nodo_inicio!=NULL){
 
-                if(casoEspecial!=1 && casoEspecial!=2){
+                if(casoEspecial!=1 && casoEspecial!=2 && final+1!=cantDatos()){
 
-                    NodoListaDoble* temp=new NodoListaDoble(aux4->elemento);
+                    NodoListaDoble* temp=new NodoListaDoble(primero->elemento);
                     temp->siguiente=aux4;
                     aux4->atras=temp;
                     nodo_final->siguiente=aux2;
@@ -150,12 +192,14 @@ void listaDobleCircular<T>::cambio(int inicio,int final){
                     nodo_inicio->atras=aux3;
                     nodo_inicio->siguiente=temp->siguiente;
                     aux4->atras=nodo_inicio;
+                    ultimo->siguiente=primero;
+                    primero->atras=ultimo;
                     delete(temp);
                     /*dato1 = nodo_final->elemento;
                     nodo_final->elemento=nodo_inicio->elemento;
                     nodo_inicio->elemento=dato1;*/
-                }else if(casoEspecial==1){
-                    NodoListaDoble* temp=new NodoListaDoble(aux4->elemento);
+                }else if(casoEspecial==1 && final+1!=cantDatos()){
+                    NodoListaDoble* temp=new NodoListaDoble(primero->elemento);
                     temp->siguiente=aux4;
                     aux4->atras=temp;
                     nodo_final->siguiente=nodo_inicio;
@@ -164,9 +208,11 @@ void listaDobleCircular<T>::cambio(int inicio,int final){
                     nodo_final->atras=aux1;
                     nodo_inicio->siguiente=temp->siguiente;
                     aux4->atras=nodo_inicio;
+                    ultimo->siguiente=primero;
+                    primero->atras=ultimo;
                     delete(temp);
-                }else{
-                    NodoListaDoble* temp=new NodoListaDoble(aux4->elemento);
+                }else if(casoEspecial==2 && final+1!=cantDatos()){
+                    NodoListaDoble* temp=new NodoListaDoble(primero->elemento);
                     temp->siguiente=aux4;
                     aux4->atras=temp;
                     nodo_final->siguiente=aux2;
@@ -177,6 +223,51 @@ void listaDobleCircular<T>::cambio(int inicio,int final){
                     nodo_inicio->atras=aux2;
                     nodo_inicio->siguiente=temp->siguiente;
                     aux4->atras=nodo_inicio;
+                    ultimo->siguiente=primero;
+                    primero->atras=ultimo;
+                    delete(temp);
+                }else if(casoEspecial!=1 && casoEspecial!=2 && final+1==cantDatos()){
+                    NodoListaDoble* temp=new NodoListaDoble(primero->elemento);
+                    temp->siguiente=ultimo;
+                    ultimo->atras=temp;
+                    nodo_final->siguiente=aux2;
+                    aux2->atras=nodo_final;
+                    aux1->siguiente=nodo_final;
+                    nodo_final->atras=aux1;
+                    aux3->siguiente=nodo_inicio;
+                    nodo_inicio->atras=aux3;
+                    nodo_inicio->siguiente=temp->siguiente;
+                    ultimo->atras=nodo_inicio;
+                    ultimo->siguiente=primero;
+                    primero->atras=ultimo;
+                    delete(temp);
+                }else if(casoEspecial==1 && final+1==cantDatos()){
+                    NodoListaDoble* temp=new NodoListaDoble(primero->elemento);
+                    temp->siguiente=ultimo;
+                    ultimo->atras=temp;
+                    nodo_final->siguiente=nodo_inicio;
+                    nodo_inicio->atras=nodo_final;
+                    aux1->siguiente=nodo_final;
+                    nodo_final->atras=aux1;
+                    nodo_inicio->siguiente=temp->siguiente;
+                    ultimo->atras=nodo_inicio;
+                    ultimo->siguiente=primero;
+                    primero->atras=ultimo;
+                    delete(temp);
+                }else if(casoEspecial==2 && final+1==cantDatos()){
+                    NodoListaDoble* temp=new NodoListaDoble(primero->elemento);
+                    temp->siguiente=ultimo;
+                    ultimo->atras=temp;
+                    nodo_final->siguiente=aux2;
+                    aux2->atras=nodo_final;
+                    aux1->siguiente=nodo_final;
+                    nodo_final->atras=aux1;
+                    aux2->siguiente=nodo_inicio;
+                    nodo_inicio->atras=aux2;
+                    nodo_inicio->siguiente=temp->siguiente;
+                    ultimo->atras=nodo_inicio;
+                    ultimo->siguiente=primero;
+                    primero->atras=ultimo;
                     delete(temp);
                 }
 
@@ -201,17 +292,28 @@ void listaDobleCircular<T>::cambio(int inicio,int final){
                 }else if(contador == final-1 && casoEspecial!=1 && casoEspecial!=2){
                     aux3=aux;
 
-                }else if(contador == final+1){
+                }else if(contador == final+1 && final+1!=cantDatos()){
                     aux4=aux;
 
-                }else if(contador == cantDatos()) {
+                }else if(contador == cantDatos() ) {
                     ultimo=aux;
+
                 }
                 aux=aux->siguiente;
                 contador++;
             }while(aux!=primero);
             if(nodo_final!=NULL && nodo_inicio!=NULL){
-                if(casoEspecial!=1 && casoEspecial!=2){
+                if(casoEspecial!=1 && casoEspecial!=2 && final+1==cantDatos()){
+                    nodo_final->siguiente=aux2;
+                    aux2->atras=nodo_final;
+                    nodo_inicio->siguiente=ultimo;
+                    ultimo->atras=nodo_inicio;
+                    aux3->siguiente=nodo_inicio;
+                    nodo_inicio->atras=aux3;
+                    primero=nodo_final;
+                    ultimo->siguiente=primero;
+                    primero->atras=ultimo;
+                }else if(casoEspecial!=1 && casoEspecial!=2 && final+1!=cantDatos()){
                     nodo_final->siguiente=aux2;
                     aux2->atras=nodo_final;
                     nodo_inicio->siguiente=aux4;
@@ -219,17 +321,19 @@ void listaDobleCircular<T>::cambio(int inicio,int final){
                     aux3->siguiente=nodo_inicio;
                     nodo_inicio->atras=aux3;
                     primero=nodo_final;
+                    ultimo->siguiente=primero;
                     primero->atras=ultimo;
-                    ultimo->siguiente=ultimo;
-                }else if(casoEspecial==1){
+                }
+                else if(casoEspecial==1){
+
                     nodo_final->siguiente=nodo_inicio;
                     nodo_inicio->atras=nodo_final;
                     nodo_inicio->siguiente=aux4;
                     aux4->atras=nodo_inicio;
-
                     primero=nodo_final;
                     primero->atras=ultimo;
-                    ultimo->siguiente=ultimo;
+                    ultimo->siguiente=primero;
+
                 }else{
                     nodo_final->siguiente=aux2;
                     aux2->atras=nodo_final;
@@ -337,24 +441,45 @@ void listaDobleCircular<T>::cambio(int inicio,int final){
             }else{
                 cout<<"error en los indices";
             }
+
         }
     }
 }
 template <class T>
 void listaDobleCircular<T>::insertarPos(T elemento,int pos){
+
     NodoListaDoble* nuevo= new NodoListaDoble(elemento);
+    NodoListaDoble* ultimo;
+
+    int contador=0;
+
+
     if (ListaVacia())
        {
          primero = nuevo;
          nuevo->siguiente=primero;
+
        }
        else
        {
-         if(pos <=1)
+         if(pos==0)
          {
+             NodoListaDoble* aux=primero;
+             do{
+
+
+                 if(contador == cantDatos()){
+                     ultimo=aux;
+                 }
+                 contador++;
+                 aux=aux->siguiente;
+             }while(aux!=primero);
              nuevo->siguiente = primero;
              primero->atras=nuevo;
              primero = nuevo;
+             ultimo->siguiente=primero;
+             primero->atras=ultimo;
+
          }
          else
          {
@@ -364,12 +489,14 @@ void listaDobleCircular<T>::insertarPos(T elemento,int pos){
            {
               i++;
               aux=aux->siguiente;
+              break;
            }
            NodoListaDoble* nuevo= new NodoListaDoble(elemento);
            nuevo->siguiente=aux->siguiente;
            aux->siguiente=nuevo;
           }
      }
+
 }
 template <class T>
 void listaDobleCircular<T>::insertar(T elemento)
