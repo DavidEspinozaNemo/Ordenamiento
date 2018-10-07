@@ -133,9 +133,16 @@ int main(int argc, char *argv[])
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
+                        case 8:{
+                            clock_t start = clock();
+                            radixsort(listaPrueba2, new listaSimple<int>(),listaPrueba2->cantDatos()-1);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
                         case 10:{
                             clock_t start = clock();
-                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
@@ -188,7 +195,7 @@ int main(int argc, char *argv[])
                         }
                         case 10:{
                             clock_t start = clock();
-                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
@@ -240,7 +247,7 @@ int main(int argc, char *argv[])
                         }
                         case 10:{
                             clock_t start = clock();
-                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
@@ -292,7 +299,7 @@ int main(int argc, char *argv[])
                         }
                         case 10:{
                             clock_t start = clock();
-                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
@@ -350,7 +357,7 @@ int main(int argc, char *argv[])
                         }
                         case 10:{
                             clock_t start = clock();
-                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
@@ -402,7 +409,7 @@ int main(int argc, char *argv[])
                         }
                         case 10:{
                             clock_t start = clock();
-                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
@@ -454,7 +461,7 @@ int main(int argc, char *argv[])
                         }
                         case 10:{
                             clock_t start = clock();
-                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
@@ -505,7 +512,7 @@ int main(int argc, char *argv[])
                         }
                         case 10:{
                             clock_t start = clock();
-                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 0, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
@@ -563,7 +570,9 @@ int main(int argc, char *argv[])
                         }
                         case 10:{
                             clock_t start = clock();
-                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            listaPrueba2->insertar(0); //insertar una cabeza
+                            listaPrueba2->cambio(0,listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 1, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
@@ -615,7 +624,9 @@ int main(int argc, char *argv[])
                         }
                         case 10:{
                             clock_t start = clock();
-                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            listaPrueba2->insertar('*'); //insertar una cabeza
+                            listaPrueba2->cambio(0,listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 1, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
@@ -667,7 +678,9 @@ int main(int argc, char *argv[])
                         }
                         case 10:{
                             clock_t start = clock();
-                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            listaPrueba2->insertar("->inicio"); //insertar una cabeza
+                            listaPrueba2->cambio(0,listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 1, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
@@ -718,7 +731,9 @@ int main(int argc, char *argv[])
                         }
                         case 10:{
                             clock_t start = clock();
-                            quicksort(listaPrueba2, 0, listaPrueba2->cantDatos());
+                            listaPrueba2->insertar(new persona("Nadie",0,1000000)); //insertar una cabeza
+                            listaPrueba2->cambio(0,listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 1, listaPrueba2->cantDatos());
                             listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
