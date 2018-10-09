@@ -25,11 +25,12 @@ public:
             }
 
             T quitar();
-            T frenteCola()const;
+            T frenteCola();
             void borrarCola();
             void insertar(T elemento);
             void mostrarCola(cola<T>& q);
-            bool colaVacia() const;
+            bool colaVacia();
+
 
 };
 

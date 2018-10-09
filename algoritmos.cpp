@@ -73,7 +73,7 @@ bool mayor(string inicio,string final){
 bool mayor(persona* inicio,persona* final){
     int primera1 = inicio->getCedula();
     int primera2 = final->getCedula();
-    cout<<primera1<<"entre"<<endl;
+    //cout<<primera1<<"entre"<<endl;
     int num1 = ("d%",primera1);
     int num2 = ("d%",primera2);
     if(num1>num2){
@@ -84,14 +84,15 @@ bool mayor(persona* inicio,persona* final){
 }
 
 bool menor(int inicio,int final){
-
-    if(inicio<final){
+    //cout<<"entra";
+    if(inicio<=final){
         return true;
     }else{
         return false;
     }
 }
 bool menor(char inicio,char final){
+
     int num1= ("d%",inicio);
     int num2= ("d%",final);
     if(num1<num2){
@@ -423,83 +424,101 @@ void Mybinsort(T lista[], int cantidadElementos){
 
 //----------------- mergesorth ---------------------
 
-
-//https://www.geeksforgeeks.org/merge-sort/
-// Merges two subarrays of arr[].
-// First subarray is arr[l..m]
-// Second subarray is arr[m+1..r]
-template < class T>
-void merge(T arr[], int l, int m, int r)
-{
-    int i, j, k;
-    int n1 = m - l + 1;
-    int n2 =  r - m;
-
+// Merges two subarrays of arr[]. 
+// First subarray is arr[l..m] 
+// Second subarray is arr[m+1..r] 
+template <class T>
+void merge(T tabla, int l, int m, int r,T L,T R) //int arr[]
+{ 
+    int i, j, k; 
+    int n1 = m - l + 1; 
+    int n2 =  r - m; 
     /* create temp arrays */
-    T L[n1], R[n2];
-
+    //int L[n1], R[n2];
     /* Copy data to temp arrays L[] and R[] */
     for (i = 0; i < n1; i++)
-        L[i] = arr[l + i];
-    for (j = 0; j < n2; j++)
-        R[j] = arr[m + 1+ j];
-
+        //L->sustituirValor(tabla->sacarDatos(l+1),i);
+        L->insertar(tabla->sacarDatos(l+1));//L[i] = arr[l + i];
+    for (j = 0; j < n2; j++) 
+        //R->sustituirValor(tabla->sacarDatos(m+1+j),j);
+        R->insertar(tabla->sacarDatos(m+1+j));//R[j] = arr[m + 1+ j];
+    //L->mostrarLista();
+    cout<<"L:";
+    L->mostrarLista();
+    cout<<"R:";
+    R->mostrarLista();
+    cout<<"\n -------------- \n";
+    //R->mostrarLista();
     /* Merge the temp arrays back into arr[l..r]*/
-    i = 0; // Initial index of first subarray
-    j = 0; // Initial index of second subarray
-    k = l; // Initial index of merged subarray
+    i = 0; // Initial index of first subarray 
+    j = 0; // Initial index of second subarray 
+    k = l; // Initial index of merged subarray 
+    cout<<"menor("<<L->sacarDatos(i)<<" y "<<R->sacarDatos(j)<<endl;
     while (i < n1 && j < n2)
-    {
-        if (L[i] <= R[j])
-        {
-            arr[k] = L[i];
-            i++;
-        }
+        //cout<<"while";
+    { 
+
+        if (menor(L->sacarDatos(i),R->sacarDatos(j)))//L[i] <= R[j]
+        { 
+            cout<<"if R";
+            tabla->sustituirValor(L->sacarDatos(i),k);//arr[k] = L[i];
+            i++; 
+        } 
         else
-        {
-            arr[k] = R[j];
-            j++;
-        }
-        k++;
-    }
-
-    /* Copy the remaining elements of L[], if there
+        { 
+            cout<<"if R";
+            tabla->sustituirValor(R->sacarDatos(j),k);//arr[k]3 = R[j];
+            j++; 
+        } 
+        k++; 
+    } 
+  
+    /* Copy the remaining elements of L[], if there 
        are any */
-    while (i < n1)
-    {
-        arr[k] = L[i];
-        i++;
-        k++;
-    }
-
-    /* Copy the remaining elements of R[], if there
+    while (i < n1) 
+    { 
+        tabla->sustituirValor(L->sacarDatos(i),k);//arr[k] = L[i];
+        i++; 
+        k++; 
+    } 
+  
+    /* Copy the remaining elements of R[], if there 
        are any */
-    while (j < n2)
-    {
-        arr[k] = R[j];
-        j++;
-        k++;
-    }
-}
-
-/* l is for left index and r is right index of the
+    while (j < n2) 
+    { 
+        tabla->sustituirValor(R->sacarDatos(j),k);//arr[k] = R[j];
+        j++; 
+        k++; 
+    } 
+    L->primero=NULL;
+    R->primero=NULL;
+} 
+  
+/* l is for left index and r is right index of the 
    sub-array of arr to be sorted */
-template < class T>
-void mergeSort(T arr[], int l, int r)
-{
-    if (l < r)
-    {
-        // Same as (l+r)/2, but avoids overflow for
-        // large l and h
-        int m = l+(r-l)/2;
-
-        // Sort first and second halves
-        mergeSort(arr, l, m);
-        mergeSort(arr, m+1, r);
-
-        merge(arr, l, m, r);
-    }
-}
+template <class T>
+void mergeSort(T tabla, int l, int r,T L,T R)//int arr[]
+{ 
+    L->primero=NULL;
+    R->primero=NULL;
+    if (l < r) 
+    { 
+        // Same as (l+r)/2, but avoids overflow for 
+        // large l and h 
+        int m = l+(r-l)/2; 
+  
+        // Sort first and second halves 
+        mergeSort<T>(tabla, l, m,L,R);
+        L->primero=NULL;
+        R->primero=NULL;
+        mergeSort<T>(tabla, m+1, r,L,R);
+        L->primero=NULL;
+        R->primero=NULL;
+        merge<T>(tabla, l, m, r,L,R);
+        L->primero=NULL;
+        R->primero=NULL;
+    } 
+} 
 
 /* UTILITY FUNCTIONS */
 /* Function to print an array */
@@ -515,41 +534,31 @@ void printArray2(T A[], int size)
 
 //------------------------  heapsprt --------------------
 
-
-//https://www.geeksforgeeks.org/heap-sort/
-// To heapify a subtree rooted with node i which is
-// an index in arr[]. n is size of heap
 template <class T>
-void heapify(T arr[], int n, int i)
+void heapify(T arr, int n, int i)
 {
     int largest = i; // Initialize largest as root
     int l = 2*i + 1; // left = 2*i + 1
     int r = 2*i + 2; // right = 2*i + 2
 
     // If left child is larger than root
-    if (l < n && arr[l] > arr[largest])
+    if (l < n && mayor(arr->sacarDatos(l),arr->sacarDatos(largest)))//arr[l] > arr[largest]
         largest = l;
 
     // If right child is larger than largest so far
-    if (r < n && arr[r] > arr[largest])
+    if (r < n && mayor(arr->sacarDatos(r),arr->sacarDatos(largest)))
         largest = r;
 
     // If largest is not root
     if (largest != i)
     {
-        T temp = arr[i];
-        arr[i] = arr[largest];
-        arr[largest] = temp;
-        //swap(arr[i], arr[largest]);
-
+        arr->cambio(i,largest);//swap(arr[i], arr[largest]);
         // Recursively heapify the affected sub-tree
         heapify(arr, n, largest);
     }
 }
-
-// main function to do heap sort
 template <class T>
-void heapSort(T arr[], int n)
+void heapSort(T arr, int n)
 {
     // Build heap (rearrange array)
     for (int i = n / 2 - 1; i >= 0; i--)
@@ -559,16 +568,12 @@ void heapSort(T arr[], int n)
     for (int i=n-1; i>=0; i--)
     {
         // Move current root to end
-        T temp = arr[0];
-        arr[0] = arr[i];
-        arr[i] = temp;
-        //swap(arr[0], arr[i]);
+        arr->cambio(0,i); //swap(arr[0], arr[i]);
 
         // call max heapify on the reduced heap
         heapify(arr, i, 0);
     }
 }
-
 /* A utility function to print array of size n */
 template < class T>
 void printArray(T arr[], int n)

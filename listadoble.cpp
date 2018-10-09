@@ -8,6 +8,15 @@
 #include "claseextra.cpp"
 using namespace std;
 
+template <class T>
+cola<T>* listaDoble<T>::llenarLista(cola<T>& q){
+    NodoListaDoble *aux=primero;
+    do{
+        q.insertar(aux->elemento);
+        aux=aux->siguiente;
+    }while(aux!=NULL);
+    return &q;
+}
 
 template  <class T>
 void listaDoble<T>::sustituirValor(int elemento,int pos){

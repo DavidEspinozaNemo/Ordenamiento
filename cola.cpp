@@ -23,7 +23,7 @@ void cola<T> :: insertar(T elemento)
         final -> siguiente = nuevo;
     }
     final = nuevo;
-    cout<<"inserto";
+
 }
 
 template <class T>
@@ -39,10 +39,10 @@ T cola<T> :: quitar()
 }
 
 template <class T>
-T cola<T> :: frenteCola()const
+T cola<T> :: frenteCola()
 {
     if (colaVacia())
-    throw "Cola vacÃ­a";
+    throw "Cola vaci­a";
     return frente -> elemento;
 }
 
@@ -60,9 +60,9 @@ void cola<T> :: borrarCola()
 }
 
 template <class T>
-bool cola<T> :: colaVacia() const
+bool cola<T> :: colaVacia()
 {
-    return frente == NULL;
+    return frente == nullptr;
 }
 
 template <class T>

@@ -132,7 +132,23 @@ int main(int argc, char *argv[])
                             listaPrueba2->mostrarLista();//FUNCIONA
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2,listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
                         }
+                        case 7:{
+                            clock_t start = clock();
+                            listaSimple<int>* L = new listaSimple<int>();
+                            listaSimple<int>* R = new listaSimple<int>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+
                         case 8:{
                             clock_t start = clock();
                             radixsort(listaPrueba2, new listaSimple<int>(),listaPrueba2->cantDatos()-1);
@@ -192,6 +208,21 @@ int main(int argc, char *argv[])
                             listaPrueba2->mostrarLista();//FUNCIONA
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 7:{
+                            clock_t start = clock();
+                            listaSimple<char>* L = new listaSimple<char>();
+                            listaSimple<char>* R = new listaSimple<char>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
                         }
                         case 10:{
                             clock_t start = clock();
@@ -244,6 +275,21 @@ int main(int argc, char *argv[])
                             listaPrueba2->mostrarLista();//FUNCIONA
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 7:{
+                            clock_t start = clock();
+                            listaSimple<string>* L = new listaSimple<string>();
+                            listaSimple<string>* R = new listaSimple<string>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
                         }
                         case 10:{
                             clock_t start = clock();
@@ -294,6 +340,21 @@ int main(int argc, char *argv[])
                             clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 7:{
+                            clock_t start = clock();
+                            listaSimple<persona*>* L = new listaSimple<persona*>();
+                            listaSimple<persona*>* R = new listaSimple<persona*>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
@@ -354,6 +415,21 @@ int main(int argc, char *argv[])
                             listaPrueba2->mostrarLista();//FUNCIONA
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 7:{
+                            clock_t start = clock();
+                            listaDoble<int>* L = new listaDoble<int>();
+                            listaDoble<int>* R = new listaDoble<int>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
                         }
                         case 10:{
                             clock_t start = clock();
@@ -404,6 +480,21 @@ int main(int argc, char *argv[])
                             clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 7:{
+                            clock_t start = clock();
+                            listaDoble<char>* L = new listaDoble<char>();
+                            listaDoble<char>* R = new listaDoble<char>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
@@ -458,6 +549,21 @@ int main(int argc, char *argv[])
                             listaPrueba2->mostrarLista();//FUNCIONA
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 7:{
+                            clock_t start = clock();
+                            listaDoble<string>* L = new listaDoble<string>();
+                            listaDoble<string>* R = new listaDoble<string>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
                         }
                         case 10:{
                             clock_t start = clock();
@@ -507,6 +613,21 @@ int main(int argc, char *argv[])
                             clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 7:{
+                            clock_t start = clock();
+                            listaDoble<persona*>* L = new listaDoble<persona*>();
+                            listaDoble<persona*>* R = new listaDoble<persona*>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
@@ -567,6 +688,21 @@ int main(int argc, char *argv[])
                             listaPrueba2->mostrarLista();//FUNCIONA
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 7:{
+                            clock_t start = clock();
+                            listaDobleCircular<int>* L = new listaDobleCircular<int>();
+                            listaDobleCircular<int>* R = new listaDobleCircular<int>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
                         }
                         case 10:{
                             clock_t start = clock();
@@ -619,6 +755,21 @@ int main(int argc, char *argv[])
                             clock_t start = clock();
                             tri_shell(listaPrueba2,listaAux);
                             listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 7:{
+                            clock_t start = clock();
+                            listaDobleCircular<char>* L = new listaDobleCircular<char>();
+                            listaDobleCircular<char>* R = new listaDobleCircular<char>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
                         }
@@ -675,6 +826,21 @@ int main(int argc, char *argv[])
                             listaPrueba2->mostrarLista();//FUNCIONA
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 7:{
+                            clock_t start = clock();
+                            listaDobleCircular<string>* L = new listaDobleCircular<string>();
+                            listaDobleCircular<string>* R = new listaDobleCircular<string>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
                         }
                         case 10:{
                             clock_t start = clock();
@@ -728,6 +894,21 @@ int main(int argc, char *argv[])
                             listaPrueba2->mostrarLista();//FUNCIONA
                             cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
                             break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 7:{
+                            clock_t start = clock();
+                            listaDobleCircular<persona*>* L = new listaDobleCircular<persona*>();
+                            listaDobleCircular<persona*>* R = new listaDobleCircular<persona*>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
                         }
                         case 10:{
                             clock_t start = clock();
@@ -750,40 +931,293 @@ int main(int argc, char *argv[])
                     {
                     case 1: //Numeros
                     {
+                        listaDoble<int> *listaPrueba2 = new listaDoble<int>();
                         cola<int>* colaPrueba2 = new cola<int>();
-                        generarNumeros(colaPrueba2,guardaCantidad);
+                        generarNumeros(listaPrueba2,guardaCantidad);
+                        listaDoble<int>* listaAux = new listaDoble<int>();
 
+                        switch (guardaOr) {
+                        case 1:{
+                            clock_t start = clock();
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 2:{
+                            clock_t start = clock();
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 3:{
+                            clock_t start = clock();
+                            tri_bulle(listaPrueba2);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 4:{
+                            clock_t start = clock();
+                            tri_shaker(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }case 5:{
+                            clock_t start = clock();
+                            tri_shell(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2, (listaPrueba2->cantDatos()+1));
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 7:{
+                            clock_t start = clock();
+                            listaDoble<int>* L = new listaDoble<int>();
+                            listaDoble<int>* R = new listaDoble<int>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 10:{
+                            clock_t start = clock();
+                            listaPrueba2->cambio(0,listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 1, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        }
+
+                        //listaPrueba2->mostrarLista();
+                        colaPrueba2 = listaPrueba2->llenarLista(*colaPrueba2);
                         colaPrueba2->mostrarCola(*colaPrueba2);
 
-
-                        //Swich(opcionOb) ->Para los algoritmos
                         break;
                     }
                     case 2: //chars
                     {
+                        listaDoble<char> *listaPrueba2 = new listaDoble<char>();
                         cola<char>* colaPrueba2 = new cola<char>();
-                        generarChars(colaPrueba2, guardaCantidad);
+                        listaDoble<char>* listaAux = new listaDoble<char>();
+                        generarChars(listaPrueba2, guardaCantidad);
 
+                        switch (guardaOr) {
+                        case 1:{
+                            clock_t start = clock();
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 2:{
+                            clock_t start = clock();
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 3:{
+                            clock_t start = clock();
+                            tri_bulle(listaPrueba2);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 4:{
+                            clock_t start = clock();
+                            tri_shaker(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }case 5:{
+                            clock_t start = clock();
+                            tri_shell(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2, (listaPrueba2->cantDatos()+1));
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 7:{
+                            clock_t start = clock();
+                            listaDoble<char>* L = new listaDoble<char>();
+                            listaDoble<char>* R = new listaDoble<char>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 10:{
+                            clock_t start = clock();
+                            listaPrueba2->cambio(0,listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 1, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        }
+
+                        //listaPrueba2->mostrarLista();
+                        colaPrueba2 = listaPrueba2->llenarLista(*colaPrueba2);
                         colaPrueba2->mostrarCola(*colaPrueba2);
-                        //Swich(opcionOb) ->Para los algoritmos
+
                         break;
                     }
                     case 3: //String
                     {
+                        listaDoble<string> *listaPrueba2 = new listaDoble<string>();
                         cola<string>* colaPrueba2 = new cola<string>();
-                        generarPalabras(colaPrueba2, guardaCantidad);
+                        listaDoble<string>* listaAux = new listaDoble<string>();
+                        generarPalabras(listaPrueba2, guardaCantidad);
 
+                        switch (guardaOr) {
+                        case 1:{
+                            clock_t start = clock();
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 2:{
+                            clock_t start = clock();
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 3:{
+                            clock_t start = clock();
+                            tri_bulle(listaPrueba2);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 4:{
+                            clock_t start = clock();
+                            tri_shaker(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }case 5:{
+                            clock_t start = clock();
+                            tri_shell(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2, (listaPrueba2->cantDatos()+1));
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 7:{
+                            clock_t start = clock();
+                            listaDoble<string>* L = new listaDoble<string>();
+                            listaDoble<string>* R = new listaDoble<string>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 10:{
+                            clock_t start = clock();
+                            listaPrueba2->cambio(0,listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 1, listaPrueba2->cantDatos());
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        }
+
+                        //listaPrueba2->mostrarLista();
+                        colaPrueba2 = listaPrueba2->llenarLista(*colaPrueba2);
                         colaPrueba2->mostrarCola(*colaPrueba2);
-                        //Swich(opcionOb) ->Para los algoritmos
+
                         break;
                     }
                     case 4: //objetos
                     {
-                        cola<persona*>* colaPrueba2 = new cola<persona*>();
-                        generarPersonas(colaPrueba2, guardaCantidad);
-                        colaPrueba2->mostrarCola(*colaPrueba2);
+                        listaDoble<persona*> *listaPrueba2 = new listaDoble<persona*>();
 
-                        //Swich(opcionOb) ->Para los algoritmos
+                        listaDoble<persona*>* listaAux = new listaDoble<persona*>();
+                        cola<persona*>* colaPrueba2 = new cola<persona*>();
+                        generarPersonas(listaPrueba2, guardaCantidad);
+
+                        switch (guardaOr) {
+                        case 1:{
+                            clock_t start = clock();
+                            tri_selection(listaPrueba2,(listaPrueba2->cantDatos()+1)); // FUNCIONA
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 2:{
+                            clock_t start = clock();
+                            tri_insertion(listaPrueba2,listaAux); //FUNCIONA;
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 3:{
+                            clock_t start = clock();
+                            tri_bulle(listaPrueba2);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 4:{
+                            clock_t start = clock();
+                            tri_shaker(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }case 5:{
+                            clock_t start = clock();
+                            tri_shell(listaPrueba2,listaAux);
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }case 6:{
+                            clock_t start = clock();
+                            heapSort(listaPrueba2, (listaPrueba2->cantDatos()+1));
+                            listaPrueba2->mostrarLista();//FUNCIONA
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 7:{
+                            clock_t start = clock();
+                            listaDoble<persona*>* L = new listaDoble<persona*>();
+                            listaDoble<persona*>* R = new listaDoble<persona*>();
+                            mergeSort(listaPrueba2, 0, listaPrueba2->cantDatos()-1,L,R);
+                            listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        case 10:{
+                            clock_t start = clock();
+                            listaPrueba2->cambio(0,listaPrueba2->cantDatos());
+                            quickSort(listaPrueba2, 1, listaPrueba2->cantDatos());
+                            //listaPrueba2->mostrarLista();
+                            cout << "\nTiempo transcurrido: " << ((double)clock() - start)<<"\n";
+                            break;
+                        }
+                        }
+                        //listaPrueba2->mostrarLista();
+                        colaPrueba2 = listaPrueba2->llenarLista(*colaPrueba2);
+                        colaPrueba2->mostrarCola(*colaPrueba2);
                         break;
                     }
                     }

@@ -25,7 +25,7 @@ class listaDobleCircular
 
         }
     };
-    NodoListaDoble* primero;
+
 
     public:
         listaDobleCircular ()
@@ -46,6 +46,7 @@ class listaDobleCircular
         bool ListaVacia() { return primero == NULL; }
         void limpiarLista();
         void mostrarLista();
+        NodoListaDoble* primero;
 };
 
 #endif // LISTADOBLECIRCULAR_H

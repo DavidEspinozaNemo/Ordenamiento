@@ -7,12 +7,27 @@
 #include<time.h>
 #include <stdio.h>
 #include <cstdlib>
-
+#include "cola.h"
 using namespace std;
 
 template <class T>
 void crearNombresAleatorios(T est);
 
+template <class T>
+T llenarlista(T lista,cola<char>& q){
+    q.mostrarCola(q);
+    return lista;
+}
+template <class T>
+T llenarlista(T lista,cola<string>& q){
+    q.mostrarCola(q);
+    return lista;
+}
+template <class T>
+T llenarlista(T lista,cola<persona>& q){
+    q.mostrarCola(q);
+    return lista;
+}
 //Generar una lista de numeros aleatorios.
 template <class T>
 void generarNumeros(T est, int rango){

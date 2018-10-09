@@ -2,6 +2,7 @@
 #define LISTADOBLE_H
 #include "claseextra.cpp"
 #include <iostream>
+#include "cola.h"
 
 template <class T>
 class listaDoble
@@ -21,7 +22,7 @@ class listaDoble
 
         }
     };
-    NodoListaDoble* primero;
+
     public:
         listaDoble ()
         {
@@ -39,7 +40,8 @@ class listaDoble
         void cambio(int,int);
         bool menor(int,int);
         bool mayor(int,int);
-
+        cola<T>* llenarLista(cola<T>& q);
+        NodoListaDoble* primero;
 		T getDato(int); //Cambio David
         int cantDatos(); //Cambio David
 };

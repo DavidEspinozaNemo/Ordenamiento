@@ -25,7 +25,7 @@ class listaSimple
 
         }
     };
-    NodoListaDoble* primero;
+
     public:
         listaSimple ()
         {
@@ -48,7 +48,7 @@ class listaSimple
 
         int cantDatos();
         bool ListaVacia() { return primero == NULL; }
-
+        NodoListaDoble* primero;
 
         void mostrarLista();
 };
