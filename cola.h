@@ -29,13 +29,8 @@ public:
             void borrarCola();
             void insertar(T elemento);
             void mostrarCola(cola<T>& q);
-<<<<<<< Updated upstream
-            bool colaVacia();
-
-=======
-            void mostrarCola(cola<T> &q, std::string t);
             bool colaVacia() const;
->>>>>>> Stashed changes
+
 
 };
 
