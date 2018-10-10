@@ -78,6 +78,18 @@ void cola<T>::mostrarCola(cola<T>& q)
     std::cout << std::endl;
 }
 
+template <class T>
+void cola<T>::mostrarCola(cola<T>& q, string t)
+{
+    t=t+"COLA: \n";
+    while (! q.colaVacia())
+    {
+        T v;
+        v = q.quitar();
+        t=t+v+"\n";
+    }
+}
+
 template <>
 void cola<persona*>::mostrarCola(cola<persona*>& q){
     cout<<"COLA: \n";
@@ -86,6 +98,17 @@ void cola<persona*>::mostrarCola(cola<persona*>& q){
         persona *v;
         v = q.quitar();
         cout << v->getNombre() << " : " << v->getCedula() <<" : "<< v->getEdad()<<endl;
+    }
+}
+
+template <>
+void cola<persona*>::mostrarCola(cola<persona*>& q, string t){
+    t=t+"COLA: \n";
+    while (! q.colaVacia())
+    {
+        persona *v;
+        v = q.quitar();
+        t=t+v->getNombre() + " : " + v->getCedula() +" : "+ v->getEdad()+"\n";
     }
 }
 #endif

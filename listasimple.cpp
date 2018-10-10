@@ -493,6 +493,17 @@ void listaSimple<T>::mostrarLista(){
     }while(n!=NULL);
 }
 
+template <class T>
+void listaSimple<T>::mostrarLista(string t){
+    t = t + "Lista Simple: \n";
+    NodoListaDoble* n;
+    n = primero;
+    do{
+        t=t+n->elemento+"\n";
+        n=n->siguiente;
+    }while(n!=NULL);
+}
+
 template <>
 void listaSimple<persona*>::mostrarLista(){
     cout<<"Lista Simple: \n";
@@ -500,6 +511,17 @@ void listaSimple<persona*>::mostrarLista(){
     n = primero;
     do{
         cout << n->elemento->getNombre() << " : " << n->elemento->getCedula() <<" : "<< n->elemento->getEdad()<<endl;
+        n=n->siguiente;
+    }while(n!=NULL);
+}
+
+template <>
+void listaSimple<persona*>::mostrarLista(string t){
+    t = t + "Lista Simple: \n";
+    NodoListaDoble* n;
+    n = primero;
+    do{
+        t = t +  n->elemento->getNombre() + " : " + n->elemento->getCedula() + " : " + n->elemento->getEdad() + "\n";
         n=n->siguiente;
     }while(n!=NULL);
 }

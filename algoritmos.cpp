@@ -140,7 +140,7 @@ void tri_shaker(T tableau,T temp) {
                 tableau->cambio(en_cours-1,en_cours);//tableau[en_cours]=tableau[en_cours-1];
                 tableau->sustituirValor(temp->sacarDatos(0),en_cours-1);//tableau[en_cours-1]=temp;
                 permutation=true;
-                cout<<".";
+                //cout<<".";
             }
         }
         if (sens==1) fin--; else debut++;
@@ -341,6 +341,7 @@ void quicksortBook(T *tabla, int primero, int ultimo)
     array, and places all smaller (smaller than pivot)
    to left of pivot and all greater elements to right
    of pivot */
+//Funciona
 template <class T>
 int partition (T arr, int low, int high)
 {
@@ -351,7 +352,8 @@ int partition (T arr, int low, int high)
     {
         // If current element is smaller than or
         // equal to pivot
-        if (arr->sacarDatos(j) <= arr->sacarDatos(high))
+        if (menor(arr->sacarDatos(j),arr->sacarDatos(high)) ||
+                (!menor(arr->sacarDatos(j),arr->sacarDatos(high)) && !mayor(arr->sacarDatos(j),arr->sacarDatos(high))))
         {
             i++;    // increment index of smaller element
             arr->cambio(i,j);
@@ -367,6 +369,7 @@ int partition (T arr, int low, int high)
  arr[] --> Array to be sorted,
   low  --> Starting index,
   high  --> Ending index */
+//Funciona
 template <class T>
 void quickSort(T arr, int low, int high)
 {

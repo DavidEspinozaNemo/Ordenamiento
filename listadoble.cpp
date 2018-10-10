@@ -506,6 +506,17 @@ void listaDoble<T>::mostrarLista(){
     }while(n!=NULL);
 }
 
+template <class T>
+void listaDoble<T>::mostrarLista(string t){
+    t=t+"Lista Doble: \n";
+    NodoListaDoble* n;
+    n = primero;
+    do{
+        t=t+n->elemento+"\n";
+        n=n->siguiente;
+    }while(n!=NULL);
+}
+
 //Cambio David
 template <class T>
 T listaDoble<T>::getDato(int pos){
@@ -522,6 +533,17 @@ void listaDoble<persona*>::mostrarLista(){
     n = primero;
     do{
         cout << n->elemento->getNombre() << " : " << n->elemento->getCedula() <<" : "<< n->elemento->getEdad()<<endl;
+        n=n->siguiente;
+    }while(n!=NULL);
+}
+
+template <>
+void listaDoble<persona*>::mostrarLista(){
+    t=t+"Lista Doble: \n";
+    NodoListaDoble* n;
+    n = primero;
+    do{
+        t=t+n->elemento->getNombre() + " : " + n->elemento->getCedula() +" : "+ n->elemento->getEdad()+"\n";
         n=n->siguiente;
     }while(n!=NULL);
 }

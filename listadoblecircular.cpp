@@ -534,6 +534,17 @@ void listaDobleCircular<T>::mostrarLista(){
     }while(n!=primero);
 }
 
+template <class T>
+void listaDobleCircular<T>::mostrarLista(string t){
+    t = t+ "Lista Doble Circular: \n";
+    NodoListaDoble* n;
+    n = primero;
+    do{
+        t = t+ n->elemento+"\n";
+        n=n->siguiente;
+    }while(n!=primero);
+}
+
 template <>
 void listaDobleCircular<persona*>::mostrarLista(){
     cout<<"Lista Doble Circular: \n";
@@ -541,6 +552,17 @@ void listaDobleCircular<persona*>::mostrarLista(){
     n = primero;
     do{
         cout << n->elemento->getNombre() << " : " << n->elemento->getCedula() <<" : "<< n->elemento->getEdad()<<endl;
+        n=n->siguiente;
+    }while(n!=primero);
+}
+
+template <>
+void listaDobleCircular<persona*>::mostrarLista(){
+    t = t+ "Lista Doble Circular: \n";
+    NodoListaDoble* n;
+    n = primero;
+    do{
+        t = t+ n->elemento->getNombre() + " : " + n->elemento->getCedula() +" : "+ n->elemento->getEdad()+"\n";
         n=n->siguiente;
     }while(n!=primero);
 }

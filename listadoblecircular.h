@@ -46,7 +46,11 @@ class listaDobleCircular
         bool ListaVacia() { return primero == NULL; }
         void limpiarLista();
         void mostrarLista();
+<<<<<<< Updated upstream
         NodoListaDoble* primero;
+=======
+        void mostrarLista(std::string);
+>>>>>>> Stashed changes
 };
 
 #endif // LISTADOBLECIRCULAR_H
