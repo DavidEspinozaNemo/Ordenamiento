@@ -29,7 +29,7 @@ public:
             void borrarCola();
             void insertar(T elemento);
             void mostrarCola(cola<T>& q);
-            bool colaVacia() const;
+            bool colaVacia();
 
 
 };

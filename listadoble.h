@@ -33,7 +33,6 @@ class listaDoble
         void insertarPos(T,int);
         bool ListaVacia() { return primero == NULL; }
         void mostrarLista();
-        void mostrarLista(string);
         void sustituirValor(int,int);
         void sustituirValor(char,int);
         void sustituirValor(string,int);

@@ -341,7 +341,6 @@ void quicksortBook(T *tabla, int primero, int ultimo)
     array, and places all smaller (smaller than pivot)
    to left of pivot and all greater elements to right
    of pivot */
-//Funciona
 template <class T>
 int partition (T arr, int low, int high)
 {
@@ -352,8 +351,7 @@ int partition (T arr, int low, int high)
     {
         // If current element is smaller than or
         // equal to pivot
-        if (menor(arr->sacarDatos(j),arr->sacarDatos(high)) ||
-                (!menor(arr->sacarDatos(j),arr->sacarDatos(high)) && !mayor(arr->sacarDatos(j),arr->sacarDatos(high))))
+        if (arr->sacarDatos(j) <= arr->sacarDatos(high))
         {
             i++;    // increment index of smaller element
             arr->cambio(i,j);
@@ -369,7 +367,6 @@ int partition (T arr, int low, int high)
  arr[] --> Array to be sorted,
   low  --> Starting index,
   high  --> Ending index */
-//Funciona
 template <class T>
 void quickSort(T arr, int low, int high)
 {

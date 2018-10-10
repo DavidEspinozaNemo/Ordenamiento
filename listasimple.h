@@ -25,13 +25,8 @@ class listaSimple
 
         }
     };
-<<<<<<< Updated upstream
 
     public:
-=======
-    NodoListaDoble* primero;
-public:
->>>>>>> Stashed changes
         listaSimple ()
         {
             primero = NULL;
@@ -56,7 +51,6 @@ public:
         NodoListaDoble* primero;
 
         void mostrarLista();
-        void mostrarLista(std::string);
 };
 
 #endif // LISTASIMPLE_H

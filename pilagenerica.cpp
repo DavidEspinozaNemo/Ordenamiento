@@ -59,18 +59,6 @@ void PilaGenerica<T>::mostrarPila(){
     }
 }
 
-template <class T>
-void PilaGenerica<T>::mostrarPila(string t){
-    t = t + "PILA: \n";
-    NodoPila* n;
-    while(!pilaVacia())
-    {
-        n = cima;
-        cima = cima->siguiente;
-        t = t + n->elemento + "\n";
-    }
-}
-
 /*
 template <>
 void PilaGenerica<persona*>::mostrarPila(){

@@ -3,9 +3,6 @@
 #ifndef PILAGENERICA_H
 #define PILAGENERICA_H
 #include <iostream>
-#include <sstream>
-#include <stdio.h>
-
 template <class T>
 class PilaGenerica
 {
@@ -36,7 +33,6 @@ class PilaGenerica
  		bool pilaVacia() { return cima == NULL; }
  		void limpiarPila();
         void mostrarPila();
-        void mostrarPila(std::string);
 
 		
 };
